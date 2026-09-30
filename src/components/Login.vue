@@ -3,29 +3,47 @@
 
     <!-- ÁREA DO LOGIN -->
     <section class="login-page">
-
       <section class="login-box">
 
-        <img id="login-image" src="/public/imagem/logo.png" alt="Logo CineShop">
+  <img
+    id="login-image"
+    src="/public/imagem/logo.png"
+    alt="Logo CineShop"
+  >
 
-        <h2>Entrar</h2>
+  <div class="Campo_de_texto">
 
-        <form>
-          <div>
-            <input type="email" placeholder="E-mail">
-          </div>
+    <form>
+      <h2>Entretenha-se ou compre aqui!</h2>
 
-          <div>
-            <input type="password" placeholder="Senha">
-          </div>
+      <div>
+        <input
+          type="email"
+          placeholder="E-mail"
+        >
+      </div>
 
-          <button type="submit">Entrar</button>
-        </form>
-        <a href="#">Esqueceu sua senha?</a>
+      <div>
+        <input
+          type="password"
+          placeholder="Senha"
+        >
+      </div>
 
-        <p>Ainda não tem uma conta?<a href="#">Cadastre-se</a></p>
+      <button type="submit">
+        Entrar
+      </button>
+    </form>
 
-      </section>
+    <a id="senha_esquecida" href="#">Esqueceu sua senha?</a>
+
+    <p>
+      Ainda não tem uma conta?
+      <a href="#">Cadastre-se</a>
+    </p>
+
+  </div>
+</section>
 
     </section>
 
@@ -66,40 +84,75 @@ onMounted(() => {
 
 <style>
 @import url('./global.css');
+
 .login-page {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  min-height: 0;
+  min-height: 100vh;
+
   background-image:
     linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.604),
-      #000000bf
+      rgba(0, 0, 0, 0.75)
     ),
     url('/imagem/background.png');
 
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
   background-color: #000;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  padding: 0px 0;
+  padding: 0;
   margin: 0;
 
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .login-box {
-  width: 350px;
-  padding: 30px;
-
+  width: 600px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 50px;
+  padding-right: 50px;
+  color: White;
   background: rgba(0, 0, 0, 0.8);
   border-radius: 10px;
-
   text-align: center;
+}
+
+.Campo_de_texto h2 {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+a#senha_esquecida {
+   display: inline-block;
+ padding-top: 10px;
+}
+
+.Campo_de_texto p {
+  padding: 10px;
+}
+
+.Campo_de_texto input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+.Campo_de_texto button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+img#login-image {
+  width: 220px;
+  height: 210px;
 }
 
 .conteudo {
@@ -110,11 +163,6 @@ onMounted(() => {
   padding: 50px 0;
 
   color: gray;
-}
-
-#login-image {
-  width: 220px;
-  height: 210px;
 }
 
 .filmes {
