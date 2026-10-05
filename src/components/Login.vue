@@ -7,7 +7,7 @@
 
   <img
     id="login-image"
-    src="/public/imagem/logo.png"
+    src="/imagem/Logo.png"
     alt="Logo CineShop"
   >
 
@@ -50,14 +50,16 @@
 
     <!-- ÁREA DO CONTEÚDO -->
     <section class="conteudo">
-
       <h2>Lançamentos</h2>
-
-      <div class="filmes">
-        <div class="filme">Filme 1</div>
-        <div class="filme">Filme 2</div>
-        <div class="filme">Filme 3</div>
-        <div class="filme">Filme 4</div>
+      <div
+        ref="listaFilmes"
+        class="filmes"
+      >
+        <FilmeCard
+          v-for="filme in filmes"
+          :key="filme.id"
+          :evento="filme"
+        />
       </div>
 
 
@@ -75,11 +77,17 @@
   </main>
 </template>
 <script setup>
+import { computed, ref } from 'vue'
+
+import FilmeCard from './Filmecard.vue'
+import { filmes } from '/src/data/filmes.js'
 import { onMounted } from 'vue'
 
 onMounted(() => {
   document.title = 'CineShop - Respondendo as necessidades'
 })
+
+const listaFilmes = ref(null)
 </script>
 
 <style>
@@ -172,19 +180,5 @@ img#login-image {
   overflow-x: auto;
 
   padding-bottom: 20px;
-}
-
-.filme {
-  min-width: 180px;
-  height: 250px;
-
-  background: #222;
-  border-radius: 8px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  flex-shrink: 0;
 }
 </style>
