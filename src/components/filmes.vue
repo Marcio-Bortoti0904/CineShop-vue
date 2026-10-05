@@ -1,8 +1,6 @@
 <template>
     <section class="filmes-page">
   
-      <h1>Eventos Culturais</h1>
-  
       <div class="lista-filmes">
         <Filmecard
           v-for="filme in filmes"

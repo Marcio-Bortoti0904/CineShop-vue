@@ -56,35 +56,47 @@
         class="filmes"
       >
         <FilmeCard
-          v-for="filme in filmes"
+          v-for="filme in lancamentos"
           :key="filme.id"
-          :evento="filme"
+          :filme="filme"
         />
       </div>
+      <h2>Novos produtos</h2>
 
-
-      <h2>Produtos CineShop</h2>
-
-      <div class="filmes">
-        
+      <div ref="listaProdutos" class="filmes">
+        <ProdutoCard 
+        v-for="produto in produtos"
+        :key="produto.id"
+        :produto="produto"
+        />
       </div>
-
+      <h2>Ação</h2>
+      <div ref="listaFilmes" class="filmes">
+        <FilmeCard 
+        v-for="filme in acao"
+        :key="filme.id"
+        :filme="filme"
+        />
+      </div>
     </section>
 
   </main>
 </template>
 <script setup>
-import { computed, ref } from 'vue'
+import { ref, onMounted} from 'vue'
 
 import FilmeCard from './Filmecard.vue'
+import ProdutoCard from './Produtocard.vue'
 import { filmes } from '/src/data/filmes.js'
-import { onMounted } from 'vue'
-
+import { produtos } from '/src/data/produtos.js'
 onMounted(() => {
   document.title = 'CineShop - Respondendo as necessidades'
 })
+const lancamentos = filmes.filter(filme => filme.tipo === 'lançamento 2026');
 
-const listaFilmes = ref(null)
+const acao = filmes.filter(filme => filme.genero?.includes('Ação'));
+const listaFilmes = ref(null);
+const listaProdutos = ref(null);
 </script>
 
 <style>
@@ -106,6 +118,11 @@ const listaFilmes = ref(null)
   background-position: center;
   background-size: cover;
   background-color: #000;
+  border: 2px outset blue;
+  box-shadow: 
+    0 0 5px blue,
+    0 0 20px blue,
+    0 0 40px blue;
 
   display: flex;
   justify-content: center;
@@ -163,9 +180,9 @@ img#login-image {
 .conteudo {
   width: 90%;
   max-width: 1200px;
-
+  
   margin: 0 auto;
-  padding: 50px 0;
+  padding: 20px 0;
   color: gray;
 }
 
@@ -176,9 +193,5 @@ img#login-image {
   overflow-x: auto;
 
   padding-bottom: 20px;
-}
-
-main {
-  background: linear-gradient(to right, rgb(0, 30, 255), red);
 }
 </style>
