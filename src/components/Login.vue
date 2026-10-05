@@ -63,13 +63,10 @@
       </div>
 
 
-      <h2>Projetos CineShop</h2>
+      <h2>Produtos CineShop</h2>
 
       <div class="filmes">
-        <div class="filme">Projeto 1</div>
-        <div class="filme">Projeto 2</div>
-        <div class="filme">Projeto 3</div>
-        <div class="filme">Projeto 4</div>
+        
       </div>
 
     </section>
@@ -169,7 +166,6 @@ img#login-image {
 
   margin: 0 auto;
   padding: 50px 0;
-
   color: gray;
 }
 
@@ -180,5 +176,9 @@ img#login-image {
   overflow-x: auto;
 
   padding-bottom: 20px;
+}
+
+main {
+  background: linear-gradient(to right, rgb(0, 30, 255), red);
 }
 </style>
