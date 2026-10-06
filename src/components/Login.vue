@@ -50,7 +50,7 @@
 
     <!-- ÁREA DO CONTEÚDO -->
     <section class="conteudo">
-      <h2>Lançamentos</h2>
+      <h1>Lançamentos</h1>
       <div
         ref="listaFilmes"
         class="filmes"
@@ -61,7 +61,7 @@
           :filme="filme"
         />
       </div>
-      <h2>Novos produtos</h2>
+      <h1>Novos produtos</h1>
 
       <div ref="listaProdutos" class="filmes">
         <ProdutoCard 
@@ -70,16 +70,10 @@
         :produto="produto"
         />
       </div>
-      <h2>Ação</h2>
-      <div ref="listaFilmes" class="filmes">
-        <FilmeCard 
-        v-for="filme in acao"
-        :key="filme.id"
-        :filme="filme"
-        />
+      <div class="secao-motivos">
+        <h1>Mais motivos para ter:</h1>
       </div>
     </section>
-
   </main>
 </template>
 <script setup>
@@ -92,9 +86,8 @@ import { produtos } from '/src/data/produtos.js'
 onMounted(() => {
   document.title = 'CineShop - Respondendo as necessidades'
 })
-const lancamentos = filmes.filter(filme => filme.tipo === 'lançamento 2026');
+const lancamentos = filmes.filter(filme => filme.lancamento === '2026');
 
-const acao = filmes.filter(filme => filme.genero?.includes('Ação'));
 const listaFilmes = ref(null);
 const listaProdutos = ref(null);
 </script>
@@ -118,7 +111,6 @@ const listaProdutos = ref(null);
   background-position: center;
   background-size: cover;
   background-color: #000;
-  border: 2px outset blue;
   box-shadow: 
     0 0 5px blue,
     0 0 20px blue,
@@ -131,7 +123,7 @@ const listaProdutos = ref(null);
   padding: 0;
   margin: 0;
 
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .login-box {
@@ -180,18 +172,22 @@ img#login-image {
 .conteudo {
   width: 90%;
   max-width: 1200px;
-  
-  margin: 0 auto;
-  padding: 20px 0;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 50px;
+  margin-bottom: 0px;
   color: gray;
 }
 
 .filmes {
   display: flex;
   gap: 20px;
-
   overflow-x: auto;
 
-  padding-bottom: 20px;
+  padding: 10px;
+}
+
+.secao-motivos {
+  padding: 10px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 </style>
