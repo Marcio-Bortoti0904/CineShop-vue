@@ -8,6 +8,7 @@ html,
 body,
 #app {
   margin: 0;
+  font-family: 'MinhaFonte', sans-serif;
   padding: 0;
   width: 100%;
   min-height: 100%;
@@ -22,5 +23,12 @@ a {
 }
 
 main {
-  background: linear-gradient(to right, rgb(7, 0, 73), rgb(0, 2, 104));
+  background: linear-gradient(to right, rgb(32, 5, 5), rgb(14, 14, 14));
+}
+
+@font-face {
+  font-family: 'MinhaFonte';
+  src: url('fontes/Jersey25-Regular.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
 }
