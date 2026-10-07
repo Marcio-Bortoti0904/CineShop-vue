@@ -50,7 +50,7 @@
 
     <!-- ÁREA DO CONTEÚDO -->
     <section class="conteudo">
-      <h1>Lançamentos</h1>
+      <h1>➣ Lançamentos</h1>
       <div
         ref="listaFilmes"
         class="filmes"
@@ -61,7 +61,7 @@
           :filme="filme"
         />
       </div>
-      <h1>Novos produtos</h1>
+      <h1>➣ Novos produtos</h1>
 
       <div ref="listaProdutos" class="filmes">
         <ProdutoCard 
@@ -71,7 +71,21 @@
         />
       </div>
       <div class="secao-motivos">
-        <h1>Mais motivos para ter:</h1>
+        <h1>➣ Mais motivos para ter:</h1>
+      </div>
+
+      <div class="catalogo">
+        <h1> ➣ Saiba mais dos produtos e filmes:</h1>
+        <div class="catalogo">
+         <h2>Ação</h2>
+         <div ref="listaFilmes" class="filmes">
+          <FilmeCard 
+            v-for="filme in acao"
+            :key="filme.id"
+            :filme="filme"
+          />
+        </div> 
+        </div>
       </div>
     </section>
   </main>
@@ -87,6 +101,7 @@ onMounted(() => {
   document.title = 'CineShop - Respondendo as necessidades'
 })
 const lancamentos = filmes.filter(filme => filme.lancamento === '2026');
+const acao = filmes.filter(filme => filme.genero?.includes('Ação'))
 
 const listaFilmes = ref(null);
 const listaProdutos = ref(null);
@@ -112,9 +127,9 @@ const listaProdutos = ref(null);
   background-size: cover;
   background-color: #000;
   box-shadow: 
-    0 0 5px blue,
-    0 0 20px blue,
-    0 0 40px blue;
+    0 0 5px rgb(0, 0, 0),
+    0 0 20px rgb(0, 0, 105),
+    0 0 40px rgb(0, 0, 156);
 
   display: flex;
   justify-content: center;
@@ -122,8 +137,6 @@ const listaProdutos = ref(null);
 
   padding: 0;
   margin: 0;
-
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .login-box {
@@ -170,24 +183,26 @@ img#login-image {
 }
 
 .conteudo {
-  width: 90%;
-  max-width: 1200px;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 50px;
+  margin: 100px;
+  color: white;
   margin-bottom: 0px;
-  color: gray;
 }
 
 .filmes {
   display: flex;
   gap: 20px;
   overflow-x: auto;
-
+  margin: 20px;
   padding: 10px;
+  border: 1px solid gray;
 }
 
 .secao-motivos {
   padding: 10px;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.catalogo {
+  padding: 10px;
+  margin-bottom: 0px;
 }
 </style>
