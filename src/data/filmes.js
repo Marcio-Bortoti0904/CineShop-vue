@@ -1,37 +1,43 @@
 export const filmes = [
     {
       id: 1,
+      nome: 'Mestres do Universo',
       imagem: '/filmes/HE-MAN.png',
       lancamento: '2026',
-      categoria: 'filme',
+      tipo: 'filme',
       genero: ['Ação']
     },
 
     {
       id: 2,
-      lancamento: '2026',
+      nome: 'Homem-Aranha: Um Novo Dia',
       imagem: '/filmes/Homem-aranha4.jpg',
-      categoria: 'filme',
-      genero: ['Ação']
+      lancamento: '2026',
+      tipo: 'filme',
+      genero: ['Ação', 'Super-herói']
     },
 
     {
       id: 3,
+      nome: 'Mad-Max: Estrada da Fúria',
       imagem: '/filmes/MADMAX-FR.jpg',
+      lancamento: '2015',
       genero: ['Ação', 'Distopia', 'Aventura', 'Ficção Científica', 'Ficção pós-apocalíptica', 'Fantasia', 'Drama', 'Suspense'],
-      categoria: 'filme'
+      tipo: 'filme'
     },
 
     {
       id: 4,
       imagem: '/filmes/o-fim-da-rua.png',
       lancamento: '2026',
+      tipo: 'filme',
       genero: ['Terror']
     },
 
     {
       id: 5,
       lancamento: '2026',
+      tipo: 'filme',
       imagem: '/filmes/Street_Fighter_2026.jpeg',
       genero: ['Ação', 'Comédia', 'Artes Marciais']
     }, 
@@ -39,27 +45,31 @@ export const filmes = [
     {
       id: 6,
       imagem: '/filmes/3guerra.png',
+      lancamento: '2026',
+      tipo: 'filme',
       genero: ['Paródia', 'Ação', 'Thriller Político'],
-      lancamento: '2026'
     },
 
     {
       id: 7,
-      lancamento: '2026',
       imagem: '/filmes/como-magica-2026.webp',
+      lancamento: '2026',
+      tipo: 'filme',
       genero: ['Infantil', 'Fantasia']
     },
 
     {
       id: 8,
-      lancamento: '2026',
       imagem: '/filmes/Spider-Noir.webp',
-      genero: ['Super-heroi', 'Noir', 'Ação']
+      lancamento: '2026',
+      tipo: 'serie',
+      genero: ['Super-heroi', 'Noir', 'Ação'],
     },
 
     {
       id: 9,
-      imagem: '/filmes/The_Boys.jpg'
+      imagem: '/filmes/The_Boys.jpg',
+      tipo: 'serie'
     },
 
     {
@@ -70,18 +80,42 @@ export const filmes = [
 
     {
       id: 11,
-      imagem: '/filmes/DK.jpg'
+      imagem: '/filmes/DK.jpg',
+      tipo: 'filme',
     },
 
     {
       id: 12,
-      imagem: '/filmes/incriveis.jpg'
+      imagem: '/filmes/incriveis.jpg',
+      tipo: 'filme',
     },
 
     {
       id: 13,
       imagem: '/filmes/Troia.jpg',
       lancamento: '2004',
-      categoria: 'filme'
+      tipo: 'filme'
+    },
+
+    {
+      id: 14,
+      imagem: '/filmes/BATMAN22.jpg',
+      genero: ['Ação'],
+      tipo: 'filme'
+      
+    },
+
+    {
+      id: 15,
+      imagem: '/filmes/Queda_espada.png',
+      tipo: 'filme',
+      genero: ['Ação']
+    },
+
+    {
+      id: 16,
+      imagem: '/filmes/Iron_Man_poster.jpg',
+      tipo: 'filme',
+      genero: ['Ação']
     }
 ]

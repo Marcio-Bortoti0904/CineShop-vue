@@ -72,17 +72,42 @@
       </div>
       <div class="secao-motivos">
         <h1>➣ Mais motivos para ter:</h1>
+        <div class="motivos">
+          <div class="Bloco">
+          <h2 id="titulo_bloco">Entretenimento</h2>
+          <p id="Texto_bloco">Filmes e séries para aproveitar seu tempo.</p>
+          <img id="Elemento" src="/imagem/pngtree-classic-vintage-tv-clipart-old-school-television-png-image_15793935.png" alt="">
+        </div>
+        <div class="Bloco">
+          <h2 id="titulo_bloco">Produtos</h2>
+          <p id="Texto_bloco">Encontre produtos inspirados no que você gosta.</p>
+          <img id="Elemento" src="/imagem/carrinho.png" alt="">
+        </div>
+        <div class="Bloco">
+          <h2 id="titulo_bloco">Tudo em um lugar</h2>
+          <p id="Texto_bloco">Assista e compre em uma só plataforma.</p>
+          <img id="Elemento" src="/imagem/rolo-cinema.png" alt="">
+        </div>
+        </div>
       </div>
 
       <div class="catalogo">
-        <h1> ➣ Saiba mais dos produtos e filmes:</h1>
+        <h1> ➣ Produtos e filmes</h1>
         <div class="catalogo">
-         <h2>Ação</h2>
+         <h2>➣ Ação</h2>
          <div ref="listaFilmes" class="filmes">
           <FilmeCard 
             v-for="filme in acao"
             :key="filme.id"
             :filme="filme"
+          />
+        </div>
+        <h2>➣ Séries</h2>
+        <div ref="listaFilmes" class="filmes">
+          <FilmeCard 
+          v-for="filme in series"
+          :key="filme.id"
+          :filme="filme"
           />
         </div> 
         </div>
@@ -101,7 +126,8 @@ onMounted(() => {
   document.title = 'CineShop - Respondendo as necessidades'
 })
 const lancamentos = filmes.filter(filme => filme.lancamento === '2026');
-const acao = filmes.filter(filme => filme.genero?.includes('Ação'))
+const acao = filmes.filter(filme => filme.genero?.includes('Ação') && filme.tipo ==='filme');
+const series = filmes.filter(filme => filme.tipo === 'serie');
 
 const listaFilmes = ref(null);
 const listaProdutos = ref(null);
@@ -183,7 +209,7 @@ img#login-image {
 }
 
 .conteudo {
-  margin: 100px;
+  margin: 70px;
   color: white;
   margin-bottom: 0px;
 }
@@ -195,14 +221,42 @@ img#login-image {
   margin: 20px;
   padding: 10px;
   border: 1px solid gray;
+  border-radius: 20px;
 }
 
 .secao-motivos {
   padding: 10px;
 }
 
+.motivos {
+  display: flex;
+  gap: 16px;
+}
+.Bloco {
+  background: linear-gradient(to right, rgb(64, 64, 233), rgb(1, 1, 141));
+  margin: 15px;
+  padding: 30px;
+  width: 200px;
+  border-radius: 15px;
+  display: grid;
+  gap: 26px;
+  align-content: center;
+  border: 1px solid rgb(180, 186, 248)
+}
 .catalogo {
   padding: 10px;
   margin-bottom: 0px;
+}
+
+#titulo_bloco {
+  font-size: 25px;
+}
+#Texto_bloco {
+  color:rgb(182, 181, 181);
+}
+
+#Elemento {
+  width: 120px;
+  height: 125px;
 }
 </style>

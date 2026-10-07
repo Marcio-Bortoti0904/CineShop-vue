@@ -23,12 +23,12 @@ a {
 }
 
 main {
-  background: linear-gradient(to right, rgb(32, 5, 5), rgb(14, 14, 14));
+  background: linear-gradient(to right, rgb(1, 0, 75), rgb(0, 0, 0));
 }
 
 @font-face {
   font-family: 'MinhaFonte';
-  src: url('fontes/Jersey25-Regular.woff2') format('woff2');
+  src: url('/fontes/Jersey25-Regular.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
 }
