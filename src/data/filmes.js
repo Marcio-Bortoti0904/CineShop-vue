@@ -76,5 +76,12 @@ export const filmes = [
     {
       id: 12,
       imagem: '/filmes/incriveis.jpg'
+    },
+
+    {
+      id: 13,
+      imagem: '/filmes/Troia.jpg',
+      lancamento: '2004',
+      categoria: 'filme'
     }
 ]
