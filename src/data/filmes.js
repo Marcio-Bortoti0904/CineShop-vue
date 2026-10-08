@@ -117,5 +117,13 @@ export const filmes = [
       imagem: '/filmes/Iron_Man_poster.jpg',
       tipo: 'filme',
       genero: ['Ação']
+    },
+
+    {
+      id: 17,
+      nome: 'Sonic - O filme',
+      imagem: '/filmes/sonic1.jpg',
+      tipo: 'filme',
+      genero: ['Ação', 'Aventura', 'Comédia', 'Ficção científica', 'Família']
     }
 ]

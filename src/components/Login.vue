@@ -1,118 +1,138 @@
 <template>
   <main>
-
-    <!-- ÁREA DO LOGIN -->
+    <button id="entrar"><strong>Entrar</strong></button>
     <section class="login-page">
       <section class="login-box">
-
-  <img
-    id="login-image"
-    src="/imagem/Logo.png"
-    alt="Logo CineShop"
-  >
-
-  <div class="Campo_de_texto">
-
-    <form>
-      <h2>Entretenha-se ou compre aqui!</h2>
-
-      <div>
-        <input
-          type="email"
-          placeholder="E-mail"
+        <img
+          id="login-image"
+          src="/imagem/Logo.png"
+          alt="Logo CineShop"
         >
-      </div>
 
-      <div>
-        <input
-          type="password"
-          placeholder="Senha"
-        >
-      </div>
+        <div class="Campo_de_texto">
 
-      <button type="submit">
-        Entrar
-      </button>
-    </form>
+          <form>
+            <h2>Entretenha-se ou compre aqui!</h2>
 
-    <a id="senha_esquecida" href="#">Esqueceu sua senha?</a>
+            <div>
+              <input
+                type="email"
+                placeholder="E-mail"
+                required
+              >
+            </div>
 
-    <p>
-      Ainda não tem uma conta?
-      <a href="#">Cadastre-se</a>
-    </p>
+            <div>
+              <input
+                type="password"
+                placeholder="Senha"
+                required
+              >
+            </div>
 
-  </div>
-</section>
+            <button type="submit">
+              Vamos lá!
+            </button>
+          </form>
 
+          <a id="senha_esquecida" href="#">Esqueceu sua senha?</a>
+
+          <p>
+            Ainda não tem uma conta?
+            <a href="#">Cadastre-se</a>
+          </p>
+
+        </div>
     </section>
 
+        </section>
 
-    <!-- ÁREA DO CONTEÚDO -->
-    <section class="conteudo">
-      <h1>➣ Lançamentos</h1>
-      <div
-        ref="listaFilmes"
-        class="filmes"
-      >
-        <FilmeCard
-          v-for="filme in lancamentos"
-          :key="filme.id"
-          :filme="filme"
-        />
-      </div>
-      <h1>➣ Novos produtos</h1>
 
-      <div ref="listaProdutos" class="filmes">
-        <ProdutoCard 
-        v-for="produto in produtos"
-        :key="produto.id"
-        :produto="produto"
-        />
-      </div>
-      <div class="secao-motivos">
-        <h1>➣ Mais motivos para ter:</h1>
-        <div class="motivos">
-          <div class="Bloco">
-          <h2 id="titulo_bloco">Entretenimento</h2>
-          <p id="Texto_bloco">Filmes e séries para aproveitar seu tempo.</p>
-          <img id="Elemento" src="/imagem/pngtree-classic-vintage-tv-clipart-old-school-television-png-image_15793935.png" alt="">
-        </div>
-        <div class="Bloco">
-          <h2 id="titulo_bloco">Produtos</h2>
-          <p id="Texto_bloco">Encontre produtos inspirados no que você gosta.</p>
-          <img id="Elemento" src="/imagem/carrinho.png" alt="">
-        </div>
-        <div class="Bloco">
-          <h2 id="titulo_bloco">Tudo em um lugar</h2>
-          <p id="Texto_bloco">Assista e compre em uma só plataforma.</p>
-          <img id="Elemento" src="/imagem/rolo-cinema.png" alt="">
-        </div>
-        </div>
-      </div>
+        <!-- ÁREA DO CONTEÚDO -->
+        <section class="conteudo">
+          <h1>➣ Lançamentos</h1>
+          <div
+            ref="listaFilmes"
+            class="filmes"
+          >
+            <FilmeCard
+              v-for="filme in lancamentos"
+              :key="filme.id"
+              :filme="filme"
+            />
+          </div>
+          <h1>➣ Novos produtos</h1>
 
-      <div class="catalogo">
-        <h1> ➣ Produtos e filmes</h1>
-        <div class="catalogo">
-         <h2>➣ Ação</h2>
-         <div ref="listaFilmes" class="filmes">
-          <FilmeCard 
-            v-for="filme in acao"
-            :key="filme.id"
-            :filme="filme"
-          />
+          <div ref="listaProdutos" class="filmes">
+            <ProdutoCard 
+            v-for="produto in produtos"
+            :key="produto.id"
+            :produto="produto"
+            />
+          </div>
+          <div class="secao-motivos">
+            <h1>➣ Mais motivos para ter:</h1>
+            <div class="motivos">
+              <div class="Bloco">
+              <h2>Entretenimento</h2>
+              <p>Filmes e séries para aproveitar seu tempo.</p>
+              <img id="Elemento" src="/imagem/pngtree-classic-vintage-tv-clipart-old-school-television-png-image_15793935.png" alt="">
+            </div>
+            <div class="Bloco">
+              <h2>Produtos</h2>
+              <p>Encontre produtos inspirados no que você gosta.</p>
+              <img src="/imagem/carrinho.png" alt="">
+            </div>
+            <div class="Bloco">
+              <h2>Tudo em um lugar</h2>
+              <p>Assista e compre em uma só plataforma.</p>
+              <img src="/imagem/rolo-cinema.png" alt="">
+            </div>
+            <div class="Bloco">
+              <h2>Experiência personalizada</h2>
+              <p>Encontre filmes, séries e produtos de acordo com seus interesses.</p>
+            </div>
+            <div class="Bloco">
+              <h2>Aproveite de casa</h2>
+              <p>Entretenimento e produtos sem precisar sair de casa.</p>
+            </div>
+            </div>
+          </div>
+
+          <div class="catalogo">
+            <h1> ➣ Produtos e filmes</h1>
+            <div class="catalogo">
+            <h2>➣ Ação</h2>
+            <div ref="listaFilmes" class="filmes">
+              <FilmeCard 
+                v-for="filme in acao"
+                :key="filme.id"
+                :filme="filme"
+              />
+            </div>
+            <h2>➣ Séries</h2>
+            <div ref="listaFilmes" class="filmes">
+              <FilmeCard 
+              v-for="filme in series"
+              :key="filme.id"
+              :filme="filme"
+              />
+            </div> 
+            </div>
+          </div>
+    <section class="convite-page">
+      <form>
+        <p>Quer assistir ou comprar? Informe seu email para começar a usar o CineShop.</p>
+        <div>
+          <input 
+            type="email" 
+            placeholder="E-mail" 
+            required
+          >
         </div>
-        <h2>➣ Séries</h2>
-        <div ref="listaFilmes" class="filmes">
-          <FilmeCard 
-          v-for="filme in series"
-          :key="filme.id"
-          :filme="filme"
-          />
-        </div> 
-        </div>
-      </div>
+      </form>
     </section>
+  </section> 
   </main>
 </template>
 <script setup>
@@ -136,6 +156,9 @@ const listaProdutos = ref(null);
 <style>
 @import url('./global.css');
 
+#entrar {
+  display: flex;
+}
 .login-page {
   width: 100%;
   min-height: 100vh;
@@ -183,8 +206,8 @@ const listaProdutos = ref(null);
 }
 
 a#senha_esquecida {
-   display: inline-block;
- padding-top: 10px;
+  display: inline-block;
+  padding-top: 10px;
 }
 
 .Campo_de_texto p {
@@ -231,32 +254,72 @@ img#login-image {
 .motivos {
   display: flex;
   gap: 16px;
+  flex-wrap: wrap;
 }
+
 .Bloco {
   background: linear-gradient(to right, rgb(64, 64, 233), rgb(1, 1, 141));
   margin: 15px;
   padding: 30px;
-  width: 200px;
+  flex: 1 1 200px;
   border-radius: 15px;
   display: grid;
-  gap: 26px;
+  gap: 20px;
   align-content: center;
   border: 1px solid rgb(180, 186, 248)
 }
+
 .catalogo {
   padding: 10px;
   margin-bottom: 0px;
 }
 
-#titulo_bloco {
+.Bloco h2 {
   font-size: 25px;
 }
-#Texto_bloco {
+.Bloco p {
   color:rgb(182, 181, 181);
 }
 
-#Elemento {
+.Bloco img {
   width: 120px;
   height: 125px;
+}
+
+#entrar {
+  color: rgb(255, 255, 255);
+  font-size: 17px;
+  background: linear-gradient(to right, rgb(2, 0, 117), rgb(136, 1, 1));
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  padding: 10px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px;
+}
+
+.convite-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.convite-page p {
+  margin-bottom: 10px;
+  color: rgb(184, 182, 182);
+}
+
+.convite-page input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid gray;
+  border-radius: 20px;
+  background: linear-gradient(to right, rgb(254, 254, 255), rgb(161, 159, 159));
+}
+
+.convite-page input:focus {
+  outline: 3px solid black;
 }
 </style>

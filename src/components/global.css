@@ -24,6 +24,8 @@ a {
 
 main {
   background: linear-gradient(to right, rgb(1, 0, 75), rgb(0, 0, 0));
+  font-family: 'MinhaFonte', sans-serif;
+  position: relative;
 }
 
 @font-face {
