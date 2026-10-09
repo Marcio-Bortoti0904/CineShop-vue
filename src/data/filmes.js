@@ -92,7 +92,7 @@ export const filmes = [
 
     {
       id: 13,
-      imagem: '/filmes/Troia.jpg',
+      imagem: '/filmes/troia.jpeg',
       lancamento: '2004',
       tipo: 'filme'
     },
@@ -123,6 +123,14 @@ export const filmes = [
       id: 17,
       nome: 'Sonic - O filme',
       imagem: '/filmes/sonic1.jpg',
+      tipo: 'filme',
+      genero: ['Ação', 'Aventura', 'Comédia', 'Ficção científica', 'Família']
+    },
+
+    {
+      id: 18,
+      nome: 'Superman 1',
+      imagem: '/filmes/Superman1(CR).jpg',
       tipo: 'filme',
       genero: ['Ação', 'Aventura', 'Comédia', 'Ficção científica', 'Família']
     }
