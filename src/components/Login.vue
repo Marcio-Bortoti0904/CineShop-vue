@@ -11,7 +11,7 @@
 
         <div class="Campo_de_texto">
 
-          <form>
+          <form @submit.prevent="entrar">
             <h2>Entretenha-se ou compre aqui!</h2>
 
             <div>
@@ -91,10 +91,12 @@
             <div class="Bloco">
               <h2>Experiência personalizada</h2>
               <p>Encontre filmes, séries e produtos de acordo com seus interesses.</p>
+              <img src="/imagem/oculos3d.png" alt="">
             </div>
             <div class="Bloco">
               <h2>Aproveite de casa</h2>
               <p>Entretenimento e produtos sem precisar sair de casa.</p>
+              <img src="/imagem/desc.png" alt="">
             </div>
             </div>
           </div>
@@ -131,6 +133,9 @@
           >
         </div>
       </form>
+      <RouterLink to="/home">
+          Home
+        </RouterLink>
     </section>
   </section> 
   </main>
@@ -151,6 +156,10 @@ const series = filmes.filter(filme => filme.tipo === 'serie');
 
 const listaFilmes = ref(null);
 const listaProdutos = ref(null);
+
+function entrar() {
+  router.push('/home')
+}
 </script>
 
 <style>
@@ -253,8 +262,8 @@ img#login-image {
 
 .motivos {
   display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
+  gap: 10px;
+  flex-wrap: nowrap;
 }
 
 .Bloco {

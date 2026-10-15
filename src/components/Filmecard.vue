@@ -11,18 +11,15 @@
   
   </template>
   
-  <script setup>
+<script setup>
   defineProps({
     filme: {
       type: Object,
       required: true
     }
   })
-  
-  </script>
-  
-  <style scoped>
-
+</script>
+<style scoped>
 .filme {
   flex: 0 0 220px;
 

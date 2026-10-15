@@ -8,7 +8,6 @@
           :evento="filme"
         />
       </div>
-  
     </section>
   </template>
   
@@ -42,5 +41,4 @@
   
     gap: 20px;
   }
-  
   </style>
