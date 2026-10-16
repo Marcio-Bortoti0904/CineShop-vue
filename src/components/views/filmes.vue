@@ -17,20 +17,6 @@
   </script>
   
   <style scoped>
-  
-  .filmes-page {
-    padding: 30px;
-  }
-  
-  .filmes-page h1 {
-    margin: 0 0 25px;
-  
-    color: #ffffff;
-  
-    font-size: 28px;
-    font-weight: 700;
-  }
-  
   .lista-filmes {
     display: grid;
   

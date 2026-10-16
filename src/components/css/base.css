@@ -1,0 +1,308 @@
+@import url('./global.css');
+
+#entrar {
+  display: flex;
+}
+.login-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.604),
+      rgba(0, 0, 0, 0.75)
+    ),
+    url('/imagem/background.png');
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: #000;
+  box-shadow: 
+    0 0 5px rgb(0, 0, 0),
+    0 0 20px rgb(0, 0, 105),
+    0 0 40px rgb(0, 0, 156);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0;
+  margin: 0;
+}
+
+.login-box {
+  width: 600px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 50px;
+  padding-right: 50px;
+  color: White;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.Campo_de_texto h2 {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+a#senha_esquecida {
+  display: inline-block;
+  padding-top: 10px;
+}
+
+.Campo_de_texto p {
+  padding: 10px;
+}
+
+.Campo_de_texto input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+.Campo_de_texto button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+img#login-image {
+  width: 220px;
+  height: 210px;
+}
+
+.conteudo {
+  margin: 30px;
+  color: white;
+  margin-bottom: 0px;
+}
+
+.filmes {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  margin: 20px;
+  padding: 10px;
+}
+
+.filmes::-webkit-scrollbar {
+    height: 8px;
+}
+.filmes::-webkit-scrollbar-thumb {
+    background: #333;
+    border: 2px solid #121212;
+}
+.secao-motivos {
+  padding: 10px;
+}
+
+.motivos {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.Bloco {
+  background: linear-gradient(to right, rgb(64, 64, 233), rgb(1, 1, 141));
+  margin: 15px;
+  padding: 30px;
+  flex: 1 1 200px;
+  border-radius: 15px;
+  display: grid;
+  gap: 20px;
+  align-content: center;
+  border: 1px solid rgb(180, 186, 248)
+}
+
+.catalogo {
+  padding: 10px;
+  margin-bottom: 0px;
+}
+
+.Bloco h2 {
+  font-size: 25px;
+}
+.Bloco p {
+  color:rgb(182, 181, 181);
+}
+
+.Bloco img {
+  width: 120px;
+  height: 125px;
+}
+
+#entrar {
+  color: rgb(255, 255, 255);
+  font-size: 17px;
+  background: linear-gradient(to right, rgb(2, 0, 117), rgb(136, 1, 1));
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  padding: 10px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px;
+}
+
+.convite-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.convite-page p {
+  margin-bottom: 10px;
+  color: rgb(184, 182, 182);
+}
+
+.convite-page input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid gray;
+  border-radius: 20px;
+  background: linear-gradient(to right, rgb(254, 254, 255), rgb(161, 159, 159));
+}
+
+.convite-page input:focus {
+  outline: 3px solid black;
+}
+
+/* MASCOTE VOLY */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #121212; /* Mesma cor de fundo do site */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Garante que fique por cima de tudo */
+    transition: opacity 0.5s ease; /* Transição para o efeito fade-out */
+}
+
+/* Classe aplicada via JavaScript para suavizar a saída */
+#loading-screen.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Caixa central do Loading */
+.loading-box {
+    background-color: #1a1a1a;
+    padding: 30px;
+    text-align: center;
+    border-color: #333333;
+    width: 320px;
+}
+
+/* Texto piscando estilo Arcade */
+.loading-text {
+    font-size: 14px;
+    color: #00ffcc; /* Verde neon arcade */
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    animation: pixel-blink 0.8s infinite steps(2); /* Efeito "liga/desliga" seco */
+}
+
+/* Container externo da barra de progresso */
+.pixel-bar-container {
+    width: 100%;
+    height: 24px;
+    background-color: #262626;
+    border-color: #444444;
+    padding: 2px;
+}
+
+/* A barra de progresso interna */
+.pixel-bar-progress {
+    height: 100%;
+    width: 0%;
+    background-color: #ff0055; /* Rosa/Neon CineShop */
+    animation: fill-bar 2s forwards steps(10); 
+}
+
+/* MASCOTE VOLY */
+.mascot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+}
+
+.mascot-bubble {
+  position: relative;
+  background-color: #1a1a1a;
+  color: #00ffcc;
+  padding: 10px;
+  font-size: 8px;
+  text-transform: uppercase;
+  max-width: 180px;
+  text-align: center;
+  margin-bottom: 12px;
+  line-height: 1.4;
+  border-color: #333333;
+  animation: mascot-float 3s ease-in-out infinite;
+}
+
+.mascot-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  background-color: #1a1a1a;
+  border-right: 4px solid #333333;
+  border-bottom: 4px solid #333333;
+}
+
+.mascot-image-wrapper {
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  animation: mascot-float 3s ease-in-out infinite;
+}
+
+.mascot-img {
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+  filter: drop-shadow(0px 0px 8px red)
+          drop-shadow(0px 0px 12px blue);
+}
+
+/* ANIMAÇÃO */
+@keyframes pixel-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes fill-bar {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+@keyframes mascot-float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

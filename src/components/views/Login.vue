@@ -11,7 +11,7 @@
 
         <div class="Campo_de_texto">
 
-          <form @submit.prevent="entrar">
+          <form>
             <h2>Entretenha-se ou compre aqui!</h2>
 
             <div>
@@ -145,8 +145,8 @@ import { ref, onMounted} from 'vue'
 
 import FilmeCard from './Filmecard.vue'
 import ProdutoCard from './Produtocard.vue'
-import { filmes } from '/src/data/filmes.js'
-import { produtos } from '/src/data/produtos.js'
+import { filmes } from '../data/filmes.js'
+import { produtos } from '../data/produtos.js'
 onMounted(() => {
   document.title = 'CineShop - Respondendo as necessidades'
 })
@@ -156,179 +156,8 @@ const series = filmes.filter(filme => filme.tipo === 'serie');
 
 const listaFilmes = ref(null);
 const listaProdutos = ref(null);
-
-function entrar() {
-  router.push('/home')
-}
 </script>
 
 <style>
-@import url('./global.css');
-
-#entrar {
-  display: flex;
-}
-.login-page {
-  width: 100%;
-  min-height: 100vh;
-
-  background-image:
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.604),
-      rgba(0, 0, 0, 0.75)
-    ),
-    url('/imagem/background.png');
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-color: #000;
-  box-shadow: 
-    0 0 5px rgb(0, 0, 0),
-    0 0 20px rgb(0, 0, 105),
-    0 0 40px rgb(0, 0, 156);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  padding: 0;
-  margin: 0;
-}
-
-.login-box {
-  width: 600px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 50px;
-  padding-right: 50px;
-  color: White;
-  background: rgba(0, 0, 0, 0.8);
-  border-radius: 10px;
-  text-align: center;
-}
-
-.Campo_de_texto h2 {
-  padding-bottom: 10px;
-  padding-top: 10px;
-}
-
-a#senha_esquecida {
-  display: inline-block;
-  padding-top: 10px;
-}
-
-.Campo_de_texto p {
-  padding: 10px;
-}
-
-.Campo_de_texto input {
-  width: 100%;
-  padding: 10px;
-  margin: 5px 0;
-}
-
-.Campo_de_texto button {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-}
-
-img#login-image {
-  width: 220px;
-  height: 210px;
-}
-
-.conteudo {
-  margin: 70px;
-  color: white;
-  margin-bottom: 0px;
-}
-
-.filmes {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  margin: 20px;
-  padding: 10px;
-  border: 1px solid gray;
-  border-radius: 20px;
-}
-
-.secao-motivos {
-  padding: 10px;
-}
-
-.motivos {
-  display: flex;
-  gap: 10px;
-  flex-wrap: nowrap;
-}
-
-.Bloco {
-  background: linear-gradient(to right, rgb(64, 64, 233), rgb(1, 1, 141));
-  margin: 15px;
-  padding: 30px;
-  flex: 1 1 200px;
-  border-radius: 15px;
-  display: grid;
-  gap: 20px;
-  align-content: center;
-  border: 1px solid rgb(180, 186, 248)
-}
-
-.catalogo {
-  padding: 10px;
-  margin-bottom: 0px;
-}
-
-.Bloco h2 {
-  font-size: 25px;
-}
-.Bloco p {
-  color:rgb(182, 181, 181);
-}
-
-.Bloco img {
-  width: 120px;
-  height: 125px;
-}
-
-#entrar {
-  color: rgb(255, 255, 255);
-  font-size: 17px;
-  background: linear-gradient(to right, rgb(2, 0, 117), rgb(136, 1, 1));
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  padding: 10px;
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 10px;
-}
-
-.convite-page {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
-}
-
-.convite-page p {
-  margin-bottom: 10px;
-  color: rgb(184, 182, 182);
-}
-
-.convite-page input {
-  width: 100%;
-  padding: 10px;
-  margin: 5px 0;
-  border: 1px solid gray;
-  border-radius: 20px;
-  background: linear-gradient(to right, rgb(254, 254, 255), rgb(161, 159, 159));
-}
-
-.convite-page input:focus {
-  outline: 3px solid black;
-}
+@import url('../css/base.css');
 </style>
