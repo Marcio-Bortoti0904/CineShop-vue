@@ -17,7 +17,7 @@
 
       <div ref="listaFilmes" class="filmes">
         <FilmeCard
-          v-for="filme in filmes"
+          v-for="filme in numeroDecimal"
           :key="filme.id"
           :filme="filme"
         />
@@ -52,6 +52,8 @@ import { onMounted } from 'vue'
 import { filmes } from '../data/filmes.js'
 import FilmeCard from './Filmecard.vue'
 import Header from './Header.vue'
+
+const numeroDecimal = [...filmes].sort(() => Math.random() - 0.5)
 
 onMounted(() => {
   document.title = 'CineShop - Página inicial'
