@@ -17,7 +17,14 @@ body,
 
 body {
   margin: 0;
-  background: linear-gradient(to right, rgb(1, 0, 75), rgb(0, 0, 0));
+  min-height: 100vh;
+  background-color: #01053b;
+
+  background-image:
+    linear-gradient(#530000 1px, transparent 1px),
+    linear-gradient(90deg, #530000 1px, transparent 1px);
+
+  background-size: 6px 6px;
 }
 
 a {
@@ -25,7 +32,6 @@ a {
 }
 
 main {
-  background: linear-gradient(to right, rgb(1, 0, 75), rgb(0, 0, 0));
   font-family: 'MinhaFonte', sans-serif;
   position: relative;
   margin: 0;

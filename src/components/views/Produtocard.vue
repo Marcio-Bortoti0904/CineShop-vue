@@ -37,25 +37,21 @@ defineProps({
 
 .produto {
   flex: 0 0 240px;
-  background: white;
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 8px;
-
+  background: rgb(177, 176, 176);
+  border: 10px solid rgb(105, 104, 104);
   overflow: hidden;
-
   cursor: pointer;
-
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .produto:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  border-color: white;
+  border-color: rgb(0, 4, 255);
 }
 
 .imagem-produto {
-  width: 210px;
-  height: 220px;
+  width: 220px;
+  height: 230px;
 
   margin: 0 auto;
 

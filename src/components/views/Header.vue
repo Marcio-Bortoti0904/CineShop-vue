@@ -8,9 +8,7 @@
     >
       ☰
     </button>
-
-    <Menu :menu-aberto="menuAberto" />
-    <img id="logo" src="/imagem/Logo.png" alt="Logo CineShop">
+    <img id="login-image" src="/imagem/Logo.png" alt="Logo CineShop">
       <!-- Pesquisa -->
       <div class="search-container">
         <input
@@ -23,14 +21,13 @@
 
       <!-- Perfil -->
       <div class="user-profile">
-        <span class="user-name">Beatriz</span>
+        <span class="user-name">Você</span>
         <div class="user-avatar pixel-border"></div>
       </div>
   </header>
 </template>
 <script setup>
 import { ref } from 'vue'
-import Menu from './Menu.vue'
 const menuAberto = ref(false)
 </script>
 <style scoped>
@@ -40,34 +37,20 @@ const menuAberto = ref(false)
   align-items: center;
   justify-content: space-between;
   background-color: #1a1a1a;
-  padding: 20px;
-  margin: 15px;
+  padding: 10px;
+  margin: 10px;
   border-color: #333333;
-  gap: 20px;
+}
+
+.pixel-border {
+  border: 4px solid #4e4c4c;
+  box-shadow: -4px 0 #121212, 4px 0 #121212, 0 -4px #121212, 0 4px #121212, inset -4px -4px #262626;
 }
 
 #logo {
   width: 130px;
   height: 125px;
   object-fit: contain;
-}
-
-/* MENU */
-.menu {
-  display: flex;
-  gap: 20px;
-}
-
-.menu-item {
-  color: #ffffff;
-  text-decoration: none;
-  padding: 5px;
-  transition: color 0.2s;
-}
-
-.menu-item:hover,
-.menu-item.active {
-  color: #00ffcc;
 }
 
 /* PESQUISA */
@@ -78,7 +61,7 @@ const menuAberto = ref(false)
 .search-input {
   box-sizing: border-box;
   width: 100%;
-  background-color: #ffffff;
+  background-color: #262626;
   border-color: #444444;
   color: #fff;
   font-size: 15px;
@@ -95,7 +78,7 @@ const menuAberto = ref(false)
 
 .user-name {
   color: #fff;
-  font-size: 10px;
+  font-size: 20px;
 }
 
 .user-avatar {

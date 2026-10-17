@@ -115,7 +115,7 @@ img#login-image {
   display: grid;
   gap: 20px;
   align-content: center;
-  border: 1px solid rgb(180, 186, 248)
+  border: 1px solid rgb(180, 186, 248);
 }
 
 .catalogo {
@@ -179,7 +179,11 @@ img#login-image {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #121212; /* Mesma cor de fundo do site */
+    background-color: #01053b;
+    background-image:
+      linear-gradient(#530000 1px, transparent 1px),
+      linear-gradient(90deg, #530000 1px, transparent 1px);
+    background-size: 6px 6px;
     display: flex;
     justify-content: center;
     align-items: center;

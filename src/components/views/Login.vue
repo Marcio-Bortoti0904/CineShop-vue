@@ -150,9 +150,11 @@ import { produtos } from '../data/produtos.js'
 onMounted(() => {
   document.title = 'CineShop - Respondendo as necessidades'
 })
-const lancamentos = filmes.filter(filme => filme.lancamento === '2026');
-const acao = filmes.filter(filme => filme.genero?.includes('Ação') && filme.tipo ==='filme');
-const series = filmes.filter(filme => filme.tipo === 'serie');
+const cont = [...filmes].sort(() => Math.random() - 0.5)
+
+const lancamentos = cont.filter(filme => filme.lancamento?.includes('2026'));
+const acao = cont.filter(filme => filme.genero?.includes('Ação') && filme.tipo ==='filme');
+const series = cont.filter(filme => filme.tipo === 'serie');
 
 const listaFilmes = ref(null);
 const listaProdutos = ref(null);

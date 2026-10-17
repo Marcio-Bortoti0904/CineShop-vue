@@ -27,7 +27,7 @@
   flex: 0 0 220px;
   background: #0D1117;
 
-  border: 1px solid #1F2937;
+  border: 10px solid #1F2937;
   overflow: hidden;
   transition: transform 0.2s ease, border-color 0.2s ease;
 
@@ -35,7 +35,7 @@
 }
 
 .filme:hover {
-  border-color: #00d5ff;
+  border-color: #ff0000;
 }
 
 .filme img {

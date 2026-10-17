@@ -2,6 +2,7 @@
   <main>
     <div id="loading-screen">
       <div class="loading-box pixel-border">
+        <div><img src="/imagem/Logo.png" id="login-image" alt=""></div>
           <div class="loading-text">LOADING</div>
           <!-- Barra que vai preencher via animação CSS -->
           <div class="pixel-bar-container pixel-border">
@@ -12,7 +13,6 @@
     <header>
       <Header />
     </header>
-    <Menu />
     <!-- CONTEÚDO -->
     <section class="conteudo" id="streaming">
       <h2>➣ Streaming</h2>
@@ -54,7 +54,7 @@ import { onMounted } from 'vue'
 import { filmes } from '../data/filmes.js'
 import FilmeCard from './Filmecard.vue'
 import Header from './Header.vue'
-import Menu from './Menu.vue'
+
 const cont = [...filmes].sort(() => Math.random() - 0.5)
 
 onMounted(() => {

@@ -133,5 +133,42 @@ export const filmes = [
       imagem: '/filmes/Superman1(CR).jpg',
       tipo: 'filme',
       genero: ['Ação', 'Aventura', 'Comédia', 'Ficção científica', 'Família']
+    },
+
+    {
+      id: 19,
+      nome: 'Mandaloriano',
+      imagem: '/filmes/mandaloriano-serie.jpg',
+      tipo: 'serie'
+    },
+    {
+      id: 20,
+      nome: 'Star Wars - Uma Nova Esperança',
+      imagem: '/filmes/StarWars-ep4.jpg',
+      tipo: 'filme',
+      genero: ['Ação', 'Aventura', 'Ficção científica']
+    },
+
+    {
+      id: 21,
+      nome: 'Demolidor Renascido',
+      imagem: '/filmes/Demolidor_-_Renascido.png',
+      tipo: 'serie',
+      lancamento: ['2025', '2026']
+    },
+
+    {
+      id: 22,
+      nome: 'X-Men 97',
+      imagem: '/filmes/X-Men97.png',
+      tipo: 'serie',
+      lancamento: ['2024', '2026']
+    },
+
+    {
+      id: 23,
+      nome: 'Invencivel',
+      imagem: '/filmes/invencivel-serie.png',
+      tipo: 'serie'
     }
 ]

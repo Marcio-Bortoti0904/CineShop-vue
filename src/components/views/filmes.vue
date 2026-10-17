@@ -11,20 +11,20 @@
     </section>
   </template>
   
-  <script setup>
-  import Filmecard from './Filmecard.vue'
-  import { filmes } from '../data/filmes.js'
-  </script>
+<script setup>
+import Filmecard from './Filmecard.vue'
+import { filmes } from '../data/filmes.js'
+
+</script>
   
-  <style scoped>
-  .lista-filmes {
-    display: grid;
+<style scoped>
+.lista-filmes {
+  display: grid;
   
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax(280px, 1fr)
-    );
-  
-    gap: 20px;
-  }
-  </style>
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(280px, 1fr)
+  );
+  gap: 20px;
+}
+</style>
