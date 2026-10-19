@@ -46,7 +46,7 @@ export const filmes = [
       id: 6,
       imagem: '/filmes/3guerra.png',
       lancamento: '2026',
-      tipo: 'filme',
+      tipo: 'serie',
       genero: ['Paródia', 'Ação', 'Thriller Político'],
     },
 
@@ -170,5 +170,20 @@ export const filmes = [
       nome: 'Invencivel',
       imagem: '/filmes/invencivel-serie.png',
       tipo: 'serie'
+    },
+
+    {
+      id: 24,
+      nome: 'Cavaleiro da Lua',
+      imagem: '/filmes/cavaleiro-lua.jpg',
+      tipo: 'serie'
+    },
+
+    {
+      id: 25, 
+      nome: 'Sombra do Esquecimento',
+      imagem: '/filmes/Sombra_Esquecida.png',
+      tipo: 'filme',
+      genero: ['Terror']
     }
 ]

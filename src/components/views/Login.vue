@@ -1,9 +1,12 @@
 <template>
   <main>
-    <button id="entrar"><strong>Entrar</strong></button>
+      <button id="entrar">
+        <strong>Entrar</strong>
+      </button>
     <section class="login-page">
+      
       <section class="login-box">
-        <img
+      <img
           id="login-image"
           src="/imagem/Logo.png"
           alt="Logo CineShop"
@@ -12,7 +15,7 @@
         <div class="Campo_de_texto">
 
           <form>
-            <h2>Entretenha-se ou compre aqui!</h2>
+            <h1>Entretenha-se ou compre aqui!</h1>
 
             <div>
               <input
@@ -55,11 +58,13 @@
             ref="listaFilmes"
             class="filmes"
           >
-            <FilmeCard
+          <PassadorHorizontal>
+              <FilmeCard
               v-for="filme in lancamentos"
               :key="filme.id"
               :filme="filme"
             />
+          </PassadorHorizontal>
           </div>
           <h1>➣ Novos produtos</h1>
 
@@ -143,6 +148,7 @@
 <script setup>
 import { ref, onMounted} from 'vue'
 
+import PassadorHorizontal from './PassadorHorizontal.vue';
 import FilmeCard from './Filmecard.vue'
 import ProdutoCard from './Produtocard.vue'
 import { filmes } from '../data/filmes.js'

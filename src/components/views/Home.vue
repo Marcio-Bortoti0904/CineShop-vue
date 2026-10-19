@@ -18,10 +18,10 @@
       <h2>➣ Streaming</h2>
 
       <div ref="listaFilmes" class="filmes">
-        <FilmeCard
-          v-for="filme in cont"
-          :key="filme.id"
-          :filme="filme"
+        <CatCard
+          v-for="categoria in categorias"
+          :key="categoria.id"
+          :categoria="categoria"
         />
       </div>
     </section>
@@ -51,11 +51,9 @@
 
 <script setup>
 import { onMounted } from 'vue'
-import { filmes } from '../data/filmes.js'
-import FilmeCard from './Filmecard.vue'
+import { categorias } from '../data/categoria.js'
+import CatCard from './CatCard.vue'
 import Header from './Header.vue'
-
-const cont = [...filmes].sort(() => Math.random() - 0.5)
 
 onMounted(() => {
   document.title = 'CineShop - Página inicial'

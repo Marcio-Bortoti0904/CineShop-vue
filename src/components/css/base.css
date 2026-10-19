@@ -1,12 +1,9 @@
 @import url('./global.css');
 
-#entrar {
-  display: flex;
-}
 .login-page {
   width: 100%;
-  min-height: 100vh;
-
+  min-height: 110vh;
+  
   background-image:
     linear-gradient(
       to bottom,
@@ -21,7 +18,7 @@
   background-color: #000;
   box-shadow: 
     0 0 5px rgb(0, 0, 0),
-    0 0 20px rgb(0, 0, 105),
+    0 0 20px rgb(0, 0, 26),
     0 0 40px rgb(0, 0, 156);
 
   display: flex;
@@ -34,17 +31,18 @@
 
 .login-box {
   width: 600px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
   color: White;
   background: rgba(0, 0, 0, 0.8);
-  border-radius: 10px;
   text-align: center;
+  border: 4px solid #4e4c4c;
+  box-shadow: -4px 0 #121212, 4px 0 #121212, 0 -4px #121212, 0 4px #121212, inset -4px -4px #262626;
 }
 
-.Campo_de_texto h2 {
+.Campo_de_texto h1 {
   padding-bottom: 10px;
   padding-top: 10px;
 }
@@ -52,6 +50,7 @@
 a#senha_esquecida {
   display: inline-block;
   padding-top: 10px;
+  font-size: 15px;
 }
 
 .Campo_de_texto p {
@@ -59,13 +58,15 @@ a#senha_esquecida {
 }
 
 .Campo_de_texto input {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   margin: 5px 0;
+  background-color: #000;
+  color: white;
 }
 
 .Campo_de_texto button {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   margin-top: 10px;
 }
@@ -79,6 +80,7 @@ img#login-image {
   margin: 30px;
   color: white;
   margin-bottom: 0px;
+  font-size: 15px;
 }
 
 .filmes {
@@ -137,7 +139,7 @@ img#login-image {
 
 #entrar {
   color: rgb(255, 255, 255);
-  font-size: 17px;
+  font-size: 20px;
   background: linear-gradient(to right, rgb(2, 0, 117), rgb(136, 1, 1));
   position: absolute;
   top: 20px;
@@ -179,7 +181,7 @@ img#login-image {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #01053b;
+    background-color: #040b6e;
     background-image:
       linear-gradient(#530000 1px, transparent 1px),
       linear-gradient(90deg, #530000 1px, transparent 1px);
@@ -228,7 +230,7 @@ img#login-image {
 .pixel-bar-progress {
     height: 100%;
     width: 0%;
-    background-color: #ff0055; /* Rosa/Neon CineShop */
+    background-color: #002fff; /* Rosa/Neon CineShop */
     animation: fill-bar 2s forwards steps(10); 
 }
 
@@ -282,7 +284,7 @@ img#login-image {
   width: 100%;
   height: auto;
   image-rendering: pixelated;
-  filter: drop-shadow(0px 0px 8px red)
+  filter: drop-shadow(0px 0px 8px rgb(255, 16, 16))
           drop-shadow(0px 0px 12px blue);
 }
 
@@ -309,4 +311,27 @@ img#login-image {
   100% {
     transform: translateY(0);
   }
+}
+
+.filme {
+  flex: 0 0 220px;
+  background: #0D1117;
+
+  border: 10px solid #1F2937;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+
+  cursor: pointer;
+}
+
+.filme:hover {
+  border-color: #ff0000;
+}
+
+.filme img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
