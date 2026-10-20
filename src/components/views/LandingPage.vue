@@ -14,37 +14,56 @@
 
         <div class="Campo_de_texto">
 
-          <form>
-            <h1>Entretenha-se ou compre aqui!</h1>
-
+          <form @submit.prevent="realizarAcao">
+            <h1>
+                {{ modo === 'login' ? 'Entretenha-se ou compre aqui!' : 'Crie sua conta CineShop' }}
+            </h1>
             <div>
               <input
-                type="email"
-                placeholder="E-mail"
-                required
+              v-model="email"
+              type="email"
+              placeholder="E-mail"
+              required
               >
             </div>
 
-            <div>
-              <input
-                type="password"
-                placeholder="Senha"
-                required
-              >
-            </div>
+          <div>
+            <input
+              v-model="senha"
+              type="password"
+              placeholder="Senha"
+              required
+            >
+          </div>
 
             <button type="submit">
               Vamos lá!
             </button>
           </form>
+          <p v-if="mensagem">
+              {{ mensagem }}
+          </p>
+          <a
+          v-if="modo === 'login'"
+          id="senha_esquecida"
+          href="#"
+          >
+              Esqueceu sua senha?
+          </a>
 
-          <a id="senha_esquecida" href="#">Esqueceu sua senha?</a>
-
-          <p>
-            Ainda não tem uma conta?
-            <a href="#">Cadastre-se</a>
+          <p v-if="modo === 'login'">
+              Ainda não tem uma conta?
+              <a href="#" @click.prevent="modo = 'cadastro'">
+                  Cadastre-se
+              </a>
           </p>
 
+          <p v-else>
+              Já tem uma conta?
+              <a href="#" @click.prevent="modo = 'login'">
+                  Entrar
+              </a>
+          </p>
         </div>
     </section>
 
@@ -146,7 +165,10 @@
   </main>
 </template>
 <script setup>
-import { ref, onMounted} from 'vue'
+import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+
+import { cadastroTemporario } from '../data/cadastroTemporario.js'
 
 import PassadorHorizontal from './PassadorHorizontal.vue';
 import FilmeCard from './Filmecard.vue'
@@ -162,8 +184,30 @@ const lancamentos = cont.filter(filme => filme.lancamento?.includes('2026'));
 const acao = cont.filter(filme => filme.genero?.includes('Ação') && filme.tipo ==='filme');
 const series = cont.filter(filme => filme.tipo === 'serie');
 
+const router = useRouter()
+
 const listaFilmes = ref(null);
 const listaProdutos = ref(null);
+const modo = ref('login')
+
+const email = ref('')
+const senha = ref('')
+const mensagem = ref('')
+
+function realizarAcao() {
+    mensagem.value = ''
+
+    if (modo.value === 'cadastro') {
+        cadastroTemporario.email = email.value
+        cadastroTemporario.senha = senha.value
+
+        router.push('/finalizarcadastro')
+        return
+    }
+
+    mensagem.value =
+        'O login ainda precisa ser conectado ao sistema de usuários.'
+}
 </script>
 
 <style>

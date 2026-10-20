@@ -185,5 +185,12 @@ export const filmes = [
       imagem: '/filmes/Sombra_Esquecida.png',
       tipo: 'filme',
       genero: ['Terror']
+    },
+
+    {
+      id: 26,
+      nome: 'Areias do Eterno',
+      imagem: '/filmes/Areias_eterno.png',
+      tipo: 'filme'
     }
 ]
