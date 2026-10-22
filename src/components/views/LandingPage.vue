@@ -73,27 +73,30 @@
         <!-- ÁREA DO CONTEÚDO -->
         <section class="conteudo">
           <h1>➣ Lançamentos</h1>
-          <div
-            ref="listaFilmes"
-            class="filmes"
-          >
-          <PassadorHorizontal>
-              <FilmeCard
-              v-for="filme in lancamentos"
-              :key="filme.id"
-              :filme="filme"
-            />
-          </PassadorHorizontal>
+          <div class="passador">
+            <div ref="listaFilmes" class="filmes">
+              <PassadorHorizontal>
+                <FilmeCard
+                  v-for="filme in lancamentos"
+                  :key="filme.id"
+                  :filme="filme"
+                />
+              </PassadorHorizontal>
+            </div>
+            <span class="fumaca fumaca-esquerda" aria-hidden="true"></span>
+            <span class="fumaca fumaca-direita" aria-hidden="true"></span>
           </div>
           <h1>➣ Novos produtos</h1>
-
           <div ref="listaProdutos" class="filmes">
-            <ProdutoCard 
-            v-for="produto in produtos"
-            :key="produto.id"
-            :produto="produto"
-            />
+            <PassadorHorizontal>
+              <ProdutoCard 
+              v-for="produto in produtos"
+              :key="produto.id"
+              :produto="produto"
+              />
+            </PassadorHorizontal>
           </div>
+          
           <div class="secao-motivos">
             <h1>➣ Mais motivos para ter:</h1>
             <div class="motivos">
@@ -130,19 +133,24 @@
             <div class="catalogo">
             <h2>➣ Ação</h2>
             <div ref="listaFilmes" class="filmes">
-              <FilmeCard 
-                v-for="filme in acao"
-                :key="filme.id"
-                :filme="filme"
-              />
-            </div>
+              <PassadorHorizontal>
+                <FilmeCard 
+                  v-for="filme in acao"
+                  :key="filme.id"
+                  :filme="filme"
+                />
+              </PassadorHorizontal>
+              </div>
+
             <h2>➣ Séries</h2>
             <div ref="listaFilmes" class="filmes">
-              <FilmeCard 
-              v-for="filme in series"
-              :key="filme.id"
-              :filme="filme"
-              />
+              <PassadorHorizontal>
+                <FilmeCard 
+                v-for="filme in series"
+                :key="filme.id"
+                :filme="filme"
+                />
+            </PassadorHorizontal>
             </div> 
             </div>
           </div>

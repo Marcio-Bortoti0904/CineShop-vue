@@ -1,6 +1,7 @@
 <template>
-    <main>
-    <img id="login-image" src="/imagem/Logo.png" alt="Logo CineShop">
+    <main class="Final">
+      <Loading />
+    <img id="image" src="/imagem/Logo.png" alt="Logo CineShop">
     <section>
       <h1>Finalize seu cadastro</h1>
       <p>Complete seus dados para fazer parte do CineShop.</p>
@@ -50,7 +51,7 @@
       <p v-if="mensagem">{{ mensagem }}</p>
 
       <button type="button" @click="voltar">
-        Voltar
+        X
       </button>
     </section>
   </main>
@@ -60,6 +61,7 @@
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { cadastroTemporario } from '../data/cadastroTemporario.js'
+import Loading from './Loading.vue'
 
 const router = useRouter()
 
@@ -100,15 +102,13 @@ function voltar() {
 
 <style>
 @import url('../css/base.css');
-img#login-image {
+img#image {
     width: 120px;
     height: 110px;
     margin: 5px;
 }
 
-main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.Final {
+  display: flex;
 }
 </style>

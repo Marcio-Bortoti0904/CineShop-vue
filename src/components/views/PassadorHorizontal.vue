@@ -48,12 +48,12 @@ function verificarPosicao() {
 
 function passarDireita() {
   if (!lista.value) return;
-  lista.value.scrollBy({ left: 300, behavior: 'smooth' });
+  lista.value.scrollBy({ left: 600, behavior: 'smooth' });
 }
 
 function passarEsquerda() {
   if (!lista.value) return;
-  lista.value.scrollBy({ left: -300, behavior: 'smooth' });
+  lista.value.scrollBy({ left: -600, behavior: 'smooth' });
 }
 
 onMounted(async () => {
@@ -79,8 +79,37 @@ onBeforeUnmount(() => {
 <style scoped>
 .passador {
   position: relative;
-  width: 100%;
-  min-width: 0;
+  overflow: hidden;
+}
+
+.passador::before,
+.passador::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 45px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.passador::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    #01053b,
+    transparent
+  );
+}
+
+.passador::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    #01053b,
+    transparent,
+    pixelated
+  );
 }
 
 .lista {
@@ -112,20 +141,22 @@ onBeforeUnmount(() => {
   height: 42px;
   padding: 0;
   margin: 0;
-  border: 1px solid #374151;
+  border: 1px solid #0a36fa; 
   border-radius: 50%;
-  background: #0D1117;
+  background: #0066ff;
   color: #ffffff;
   font-size: 32px;
   line-height: 1;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-  user-select: none; /* Evita que o usuário selecione o texto da seta com cliques rápidos */
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  user-select: none;
 }
 
 .seta:hover {
-  background: #ffffff;
-  color: #090C10;
+  background: #fafafa;
+  color: #000000;
+  border-color: #1100ff;
+  filter: drop-shadow(0 0 12px rgba(250, 10, 22, 0.9));
 }
 
 .esquerda {

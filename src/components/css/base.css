@@ -89,11 +89,17 @@ img#login-image {
   overflow-x: auto;
   margin: 20px;
   padding: 10px;
+
+  position: relative;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
 }
 
 .filmes::-webkit-scrollbar {
-    height: 8px;
+  height: 0;
 }
+
 .filmes::-webkit-scrollbar-thumb {
     background: #333;
     border: 2px solid #121212;

@@ -33,5 +33,12 @@ export const produtos = [
     {
         id: 6,
         imagem: '/produtos/Batman-forever.avif'
+    },
+
+    {
+        id: 7,
+        nome: 'Nintendo Switch Console',
+        imagem: '/produtos/nintendo-switch.jpg',
+        preco: '3000.00'
     }
 ]

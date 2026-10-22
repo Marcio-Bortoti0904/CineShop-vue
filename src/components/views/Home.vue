@@ -1,15 +1,6 @@
 <template>
   <main>
-    <div id="loading-screen">
-      <div class="loading-box pixel-border">
-        <div><img src="/imagem/Logo.png" id="login-image" alt=""></div>
-          <div class="loading-text">LOADING</div>
-          <!-- Barra que vai preencher via animação CSS -->
-          <div class="pixel-bar-container pixel-border">
-          <div class="pixel-bar-progress"></div>
-        </div>
-      </div>
-    </div>
+    <Loading />
     <header>
       <Header />
     </header>
@@ -54,6 +45,7 @@ import { onMounted } from 'vue'
 import { categorias } from '../data/categoria.js'
 import CatCard from './CatCard.vue'
 import Header from './Header.vue'
+import Loading from './Loading.vue'
 
 onMounted(() => {
   document.title = 'CineShop - Página inicial'

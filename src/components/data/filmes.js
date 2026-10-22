@@ -192,5 +192,36 @@ export const filmes = [
       nome: 'Areias do Eterno',
       imagem: '/filmes/Areias_eterno.png',
       tipo: 'filme'
+    },
+
+    {
+      id: 27,
+      nome: 'Matrix',
+      imagem: '/filmes/Matrix.png',
+      tipo: 'filme'
+    },
+
+    {
+      id: 28,
+      nome: 'Michael',
+      imagem: '/filmes/Michael.jpg',
+      tipo: 'filme',
+      lancamento: '2026'
+    },
+
+    {
+      id: 29,
+      nome: 'Devorador de Estrelas',
+      imagem: '/filmes/devorador_estrelas.png',
+      tipo: 'filme',
+      lancamento: '2026'
+    },
+
+    {
+      id: 30,
+      nome: 'Super Mario Galaxy',
+      imagem: '/filmes/Mario2.png',
+      tipo: 'filme',
+      lancamento: '2026'
     }
 ]
