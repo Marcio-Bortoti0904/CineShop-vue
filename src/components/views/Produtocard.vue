@@ -38,7 +38,7 @@ defineProps({
 .produto {
   flex: 0 0 240px;
   background: rgb(177, 176, 176);
-  border: 10px solid rgb(105, 104, 104);
+  border: 10px solid #1F2937;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -46,7 +46,7 @@ defineProps({
 
 .produto:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  border-color: rgb(0, 4, 255);
+  border-color: rgb(83, 86, 214);
 }
 
 .imagem-produto {
@@ -54,12 +54,12 @@ defineProps({
   height: 230px;
 
   margin: 0 auto;
-
+  padding: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background: white;
+  background: #1F2937;
 }
 
 .imagem-produto img {
@@ -76,15 +76,15 @@ defineProps({
 .informacoes h3 {
   margin: 0 0 8px;
 
-  color: #333;
+  color: #1F2937;
 
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .avaliacao {
   margin: 0 0 8px;
 
-  color: #777;
+  color:#1F2937;
 
   font-size: 13px;
 }
