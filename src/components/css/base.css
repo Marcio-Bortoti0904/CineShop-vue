@@ -16,11 +16,6 @@
   background-position: center;
   background-size: cover;
   background-color: #000;
-  box-shadow: 
-    0 0 5px rgb(0, 0, 0),
-    0 0 20px rgb(0, 0, 26),
-    0 0 40px rgb(0, 0, 156);
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,7 +110,7 @@ img#login-image {
 }
 
 .Bloco {
-  background: linear-gradient(to right, rgb(64, 64, 233), rgb(1, 1, 141));
+  background: linear-gradient(to right, rgb(47, 47, 56), rgb(107, 107, 107));
   margin: 15px;
   padding: 30px;
   flex: 1 1 200px;
@@ -331,7 +326,7 @@ img#login-image {
 }
 
 .filme:hover {
-  border-color: #ff0000;
+  border-color: #f85555;
 }
 
 .filme img {
