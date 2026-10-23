@@ -1,3 +1,3 @@
 <template>
-    <h1>Qual será o perfil do CineShop hoje?</h1>
+    <h1>Qual será o perfil do CineShop?</h1>
 </template>
