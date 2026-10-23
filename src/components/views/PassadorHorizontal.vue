@@ -93,25 +93,6 @@ onBeforeUnmount(() => {
   pointer-events: none;
 }
 
-.passador::before {
-  left: 0;
-  background: linear-gradient(
-    to right,
-    #01053b,
-    transparent
-  );
-}
-
-.passador::after {
-  right: 0;
-  background: linear-gradient(
-    to left,
-    #01053b,
-    transparent,
-    pixelated
-  );
-}
-
 .lista {
   display: flex;
   gap: 10px;
@@ -141,7 +122,7 @@ onBeforeUnmount(() => {
   height: 42px;
   padding: 0;
   margin: 0;
-  border: 1px solid #0a36fa; 
+  border: 1px solid #395dff; 
   border-radius: 50%;
   background: #0066ff;
   color: #ffffff;
