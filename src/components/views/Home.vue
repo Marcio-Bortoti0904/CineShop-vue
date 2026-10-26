@@ -9,11 +9,13 @@
       <h2>➣ Streaming</h2>
 
       <div ref="listaFilmes" class="filmes">
-        <CatCard
-          v-for="categoria in categorias"
-          :key="categoria.id"
-          :categoria="categoria"
-        />
+        <PassadorHorizontal>
+          <CatCard
+            v-for="categoria in categorias"
+            :key="categoria.id"
+            :categoria="categoria"
+          />
+        </PassadorHorizontal>
       </div>
     </section>
 
@@ -46,6 +48,7 @@ import { categorias } from '../data/categoria.js'
 import CatCard from './CatCard.vue'
 import Header from './Header.vue'
 import Loading from './Loading.vue'
+import PassadorHorizontal from './PassadorHorizontal.vue'
 
 onMounted(() => {
   document.title = 'CineShop - Página inicial'
