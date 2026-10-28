@@ -1,5 +1,5 @@
 <template>
-  <header class="navbar pixel-border">
+  <header class="navbar">
     <button
       class="menu-toggle"
       @click="menuAberto = !menuAberto"
@@ -22,7 +22,7 @@
       <!-- Perfil -->
       <div class="user-profile">
         <span class="user-name">Você</span>
-        <div class="user-avatar pixel-border"></div>
+        <div class="user-avatar"></div>
       </div>
   </header>
 </template>
@@ -36,15 +36,13 @@ const menuAberto = ref(false)
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #1a1a1a;
-  padding: 10px;
-  margin: 10px;
-  border-color: #333333;
-}
-
-.pixel-border {
-  border: 4px solid #4e4c4c;
-  box-shadow: -4px 0 #121212, 4px 0 #121212, 0 -4px #121212, 0 4px #121212, inset -4px -4px #262626;
+  background:rgb(20, 20, 20);
+  border-bottom:6px solid rgb(0, 0, 0);
+  gap:16px;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 20px;
+  flex-wrap:wrap
 }
 
 #logo {
@@ -86,7 +84,7 @@ const menuAberto = ref(false)
   height: 40px;
   flex-shrink: 0;
   background-color: #ff88a3;
-  border-color: #555555;
+  border: 4px solid #555555;
   background-image:
     linear-gradient(45deg, #ff6680 25%, transparent 25%),
     linear-gradient(-45deg, #ff6680 25%, transparent 25%);
@@ -94,11 +92,9 @@ const menuAberto = ref(false)
 }
 
 .menu-toggle {
-  display: none;
   background-color: #090C10;
   color: #00ffcc;
   border: 2px solid #00ffcc;
-  padding: 8px 12px;
   font-size: 22px;
   cursor: pointer;
 }

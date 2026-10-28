@@ -218,6 +218,6 @@ function realizarAcao() {
 }
 </script>
 
-<style>
+<style scoped>
 @import url('../css/base.css');
 </style>

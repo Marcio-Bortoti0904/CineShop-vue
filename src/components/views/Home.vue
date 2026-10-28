@@ -10,11 +10,7 @@
 
       <div ref="listaFilmes" class="filmes">
         <PassadorHorizontal>
-<<<<<<< HEAD
             <CatCard
-=======
-          <CatCard
->>>>>>> f2f95c1d84d0c0ec1091786488c75e34c721c1ac
             v-for="categoria in categorias"
             :key="categoria.id"
             :categoria="categoria"
@@ -69,6 +65,6 @@ onMounted(() => {
 })
 </script>
 
-<style>
+<style scoped>
 @import url('../css/base.css');
 </style>

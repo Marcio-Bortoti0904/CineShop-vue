@@ -1,4 +1,3 @@
-```vue
 <template>
   <section class="passador">
     <!-- Lista horizontal -->
@@ -6,25 +5,21 @@
       <slot></slot>
     </div>
 
-    <!-- Seta para voltar -->
+    <!-- Seta para voltar (Vazia por dentro) -->
     <button 
       class="seta esquerda" 
       v-show="podeVoltar" 
       @click="passarEsquerda" 
       aria-label="Eventos anteriores"
-    >
-      ‹
-    </button>
+    ></button>
 
-    <!-- Seta para avançar -->
+    <!-- Seta para avançar (Vazia por dentro) -->
     <button 
       class="seta direita" 
       v-show="podeAvancar" 
       @click="passarDireita" 
       aria-label="Próximos eventos"
-    >
-      ›
-    </button>
+    ></button>
   </section>
 </template>
 
@@ -112,39 +107,42 @@ onBeforeUnmount(() => {
 .seta {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   flex-shrink: 0;
-  width: 42px;
-  height: 42px;
-  padding: 0;
-  margin: 0;
-  border: 1px solid #395dff; 
-  border-radius: 50%;
-  background: #0066ff;
-  color: #ffffff;
-  font-size: 32px;
-  line-height: 1;
+  
+  /* Tamanho da área da seta */
+  width: 16px;
+  height: 16px;
+  
+  background-color: transparent;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
   user-select: none;
+  padding: 0;
+  
+  /* Desenha o ângulo da seta (A mesma cor nas duas bordas) */
+  border-top: 4px solid #fdfdfd;
+  border-right: 4px solid #fdfdfd;
+  border-bottom: none;
+  border-left: none;
+  
+  transition: border-color 0.2s, transform 0.2s;
 }
 
-.seta:hover {
-  background: #fafafa;
-  color: #000000;
-  border-color: #1100ff;
-  filter: drop-shadow(0 0 12px rgba(250, 10, 22, 0.9));
-}
-
+/* Aponta para a esquerda (Gira 225 graus) e centraliza verticalmente */
 .esquerda {
-  left: 10px;
+  left: 15px;
+  transform: translateY(-50%) rotate(-135deg);
 }
 
+/* Aponta para a direita (Gira 45 graus) e centraliza verticalmente */
 .direita {
-  right: 10px;
+  right: 15px;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/* Altera a cor de ambas as bordas no hover simultaneamente */
+.seta:hover {
+  border-top-color: #2980b9;
+  border-right-color: #2980b9;
 }
 </style>
