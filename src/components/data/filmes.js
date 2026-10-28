@@ -223,5 +223,11 @@ export const filmes = [
       imagem: '/filmes/Mario2.png',
       tipo: 'filme',
       lancamento: '2026'
+    },
+    
+    {
+      id: 31,
+      nome: 'O Máskara',
+      imagem: '/filmes/Themaask.jpg'
     }
 ]
