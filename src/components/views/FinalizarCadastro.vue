@@ -1,12 +1,12 @@
 <template>
     <main class="Final">
       <Loading />
-    <img id="image" src="/imagem/Logo.png" alt="Logo CineShop">
-    <section>
+    <section class="dates">
+      <img id="image" src="/imagem/Logo.png" alt="Logo CineShop">
       <h1>Finalize seu cadastro</h1>
       <p>Complete seus dados para fazer parte do CineShop.</p>
 
-      <form @submit.prevent="concluirCadastro">
+      <form @submit.prevent="concluirCadastro" class="entradas">
         <div>
           <input
             v-model="nome"
@@ -50,7 +50,7 @@
 
       <p v-if="mensagem">{{ mensagem }}</p>
 
-      <button type="button" @click="voltar">
+      <button type="button" @click="voltar" class="fechar">
         X
       </button>
     </section>
@@ -103,12 +103,102 @@ function voltar() {
 <style>
 @import url('../css/base.css');
 img#image {
-    width: 120px;
-    height: 110px;
+    width: 140px;
+    height: 130px;
     margin: 5px;
 }
 
 .Final {
-  display: flex;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+
+    min-height: 100%;
+    width: 100%;
+
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.dates {
+    display: flex;
+    flex-direction: column;  /* Organiza os elementos em coluna */
+    justify-content: center;
+    align-items: center;
+
+    background: rgb(47, 47, 48);
+    padding: 30px;
+    gap: 10px;
+    margin: 0;
+
+    text-align: center;
+    border: 4px solid #4e4c4c;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.entradas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: rgb(32, 32, 32);
+    padding: 30px;
+    margin: 10px;
+    gap: 10px;
+}
+
+.dates p {
+  color: white;
+}
+
+.dates h1 {
+  color: rgb(0, 89, 255);
+}
+
+.entradas div {
+    width: 100%;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+.entradas input {
+    width: 300px;
+    height: 45px;
+
+    font-size: 16px;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    border-radius: 50px;
+    background: rgb(97, 97, 97);
+}
+
+.entradas input::placeholder {
+    color: rgba(201, 201, 201, 0.658);
+}
+/* Botão de concluir cadastro */
+.entradas button {
+    width: 350px;
+    height: 50px;
+
+    font-size: 18px;
+    padding: 10px;
+
+    background: linear-gradient(to right, rgb(3, 0, 151), rgb(199, 0, 0));
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 50px;
+
+    margin: 20px
+}
+
+.fechar {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
 }
 </style>

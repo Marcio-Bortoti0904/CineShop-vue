@@ -1,11 +1,6 @@
 <template>
   <section class="passador">
-    <!-- Lista horizontal -->
-    <div class="lista" ref="lista" @scroll="verificarPosicao">
-      <slot></slot>
-    </div>
-
-    <!-- Seta para voltar (Vazia por dentro) -->
+    <!-- Seta para voltar -->
     <button 
       class="seta esquerda" 
       v-show="podeVoltar" 
@@ -13,7 +8,12 @@
       aria-label="Eventos anteriores"
     ></button>
 
-    <!-- Seta para avançar (Vazia por dentro) -->
+    <!-- Lista horizontal -->
+    <div class="lista" ref="lista" @scroll="verificarPosicao">
+      <slot></slot>
+    </div>
+
+    <!-- Seta para avançar -->
     <button 
       class="seta direita" 
       v-show="podeAvancar" 
@@ -33,10 +33,7 @@ let observador = null;
 
 function verificarPosicao() {
   if (!lista.value) return;
-  
-  // Tolerância de 2px para evitar problemas de arredondamento de pixels em telas de alta densidade (Retina)
   podeVoltar.value = lista.value.scrollLeft > 2;
-  
   const fimAlcancado = lista.value.scrollLeft + lista.value.clientWidth >= lista.value.scrollWidth - 2;
   podeAvancar.value = !fimAlcancado;
 }
@@ -54,11 +51,8 @@ function passarEsquerda() {
 onMounted(async () => {
   await nextTick();
   verificarPosicao();
-  
-  // Atualiza se a janela mudar de tamanho
   window.addEventListener('resize', verificarPosicao);
 
-  // Monitora se novos itens forem adicionados dinamicamente no slot
   if (lista.value) {
     observador = new MutationObserver(verificarPosicao);
     observador.observe(lista.value, { childList: true, subtree: true });
@@ -73,19 +67,11 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .passador {
+  display: flex;
+  align-items: center;
   position: relative;
-  overflow: hidden;
-}
-
-.passador::before,
-.passador::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 45px;
-  z-index: 2;
-  pointer-events: none;
+  width: 100%;
+  gap: 10px; /* Espaço entre as setas e a lista de filmes */
 }
 
 .lista {
@@ -99,48 +85,40 @@ onBeforeUnmount(() => {
   scrollbar-width: none; /* Firefox */
 }
 
-/* Chrome, Safari e Edge */
 .lista::-webkit-scrollbar {
   display: none; 
 }
 
 .seta {
-  position: absolute;
-  top: 50%;
-  z-index: 2;
+  /* Deixando estático no Flexbox para garantir que apareçam na tela */
+  position: relative;
   flex-shrink: 0;
+  z-index: 10;
   
-  /* Tamanho da área da seta */
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   
   background-color: transparent;
   cursor: pointer;
   user-select: none;
   padding: 0;
   
-  /* Desenha o ângulo da seta (A mesma cor nas duas bordas) */
-  border-top: 4px solid #fdfdfd;
-  border-right: 4px solid #fdfdfd;
+  border-top: 5px solid #fdfdfd;
+  border-right: 5px solid #fdfdfd;
   border-bottom: none;
   border-left: none;
   
   transition: border-color 0.2s, transform 0.2s;
 }
 
-/* Aponta para a esquerda (Gira 225 graus) e centraliza verticalmente */
 .esquerda {
-  left: 15px;
-  transform: translateY(-50%) rotate(-135deg);
+  transform: rotate(-135deg);
 }
 
-/* Aponta para a direita (Gira 45 graus) e centraliza verticalmente */
 .direita {
-  right: 15px;
-  transform: translateY(-50%) rotate(45deg);
+  transform: rotate(45deg);
 }
 
-/* Altera a cor de ambas as bordas no hover simultaneamente */
 .seta:hover {
   border-top-color: #2980b9;
   border-right-color: #2980b9;
