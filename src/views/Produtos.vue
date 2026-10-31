@@ -39,10 +39,11 @@
 </template>
 
 <script scoped>
-import PassadorHorizontal from './PassadorHorizontal.vue'
-import ProdutoCard from './Produtocard.vue'
+import PassadorHorizontal from '../components/PassadorHorizontal.vue'
+import ProdutoCard from '../components/Produtocard.vue'
 import { produtos } from '../data/produtos.js'
 </script>
+
 <style setup>
 @import url('../css/base.css');
 .bar{

@@ -22,5 +22,5 @@
   </script>
   
 <style scoped>
-@import url('../css/base.css');
+@import url('/src/css/base.css');
 </style>

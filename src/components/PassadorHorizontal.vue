@@ -40,12 +40,12 @@ function verificarPosicao() {
 
 function passarDireita() {
   if (!lista.value) return;
-  lista.value.scrollBy({ left: 600, behavior: 'smooth' });
+  lista.value.scrollBy({ left: 300, behavior: 'smooth' });
 }
 
 function passarEsquerda() {
   if (!lista.value) return;
-  lista.value.scrollBy({ left: -600, behavior: 'smooth' });
+  lista.value.scrollBy({ left: -300, behavior: 'smooth' });
 }
 
 onMounted(async () => {

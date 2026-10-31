@@ -13,12 +13,11 @@
 </template>
 
 <script setup>
-import CatCard from './CatCard.vue'
+import CatCard from '../components/CatCard.vue'
 import { categorias } from '../data/categoria.js'
 </script>
 
 <style scoped>
-
 .categorias-page {
   padding: 30px;
 }

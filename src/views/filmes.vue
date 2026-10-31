@@ -12,7 +12,7 @@
   </template>
   
 <script setup>
-import Filmecard from './Filmecard.vue'
+import Filmecard from '../components/Filmecard.vue'
 import { filmes } from '../data/filmes.js'
 
 </script>

@@ -8,28 +8,34 @@
     >
       ☰
     </button>
-    <img id="login-image" src="/imagem/Logo.png" alt="Logo CineShop">
-      <!-- Pesquisa -->
-      <div class="search-container">
-        <input
-          type="text"
-          class="search-input pixel-border"
-          placeholder="Buscar..."
-          aria-label="Buscar filmes e produtos"
-        >
-      </div>
 
-      <!-- Perfil -->
-      <div class="user-profile">
-        <span class="user-name">Você</span>
-        <div class="user-avatar"></div>
-      </div>
+    <Menu :menuAberto="menuAberto" />
+
+    <img id="login-image" src="/imagem/Logo.png" alt="Logo CineShop">
+
+    <!-- Pesquisa -->
+    <div class="search-container">
+      <input
+        type="text"
+        class="search-input pixel-border"
+        placeholder="Buscar..."
+        aria-label="Buscar filmes e produtos"
+      >
+    </div>
+
+    <!-- Perfil -->
+    <div class="user-profile">
+      <span class="user-name">Você</span>
+      <div class="user-avatar"></div>
+    </div>
   </header>
 </template>
 <script setup>
 import { ref } from 'vue'
+import Menu from '../components/Menu.vue'
 const menuAberto = ref(false)
 </script>
+
 <style scoped>
 /* CABEÇALHO */
 .navbar {
@@ -92,10 +98,11 @@ const menuAberto = ref(false)
 }
 
 .menu-toggle {
-  background-color: #090C10;
-  color: #00ffcc;
-  border: 2px solid #00ffcc;
-  font-size: 22px;
+  color: #ffffff;
+  background: none;
+  font-size: 32px;
   cursor: pointer;
+  border: none;
+  padding: 10px;
 }
 </style>

@@ -34,7 +34,6 @@ defineProps({
 </script>
   
 <style scoped>
-
 .produto {
   flex: 0 0 240px;
   background: rgb(177, 176, 176);

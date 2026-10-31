@@ -1,11 +1,14 @@
 <template>
+  <header>
+    <Header />
+  </header>
   <section class="conteudo">
           <h1>➣ Lançamentos</h1>
           <div class="passador">
             <div ref="listaFilmes" class="filmes">
               <PassadorHorizontal>
                 <FilmeCard
-                  v-for="filme in filmes"
+                  v-for="filme in lancamentos"
                   :key="filme.id"
                   :filme="filme"
                 />
@@ -20,7 +23,7 @@
             <div ref="listaFilmes" class="filmes">
               <PassadorHorizontal>
                 <FilmeCard 
-                  v-for="filme in filmes"
+                  v-for="filme in acao"
                   :key="filme.id"
                   :filme="filme"
                 />
@@ -44,8 +47,14 @@
 
 <script setup>
 import { filmes } from '../data/filmes.js'
-import FilmeCard from './Filmecard.vue';
-import PassadorHorizontal from './PassadorHorizontal.vue';
+import FilmeCard from '../components/Filmecard.vue';
+import PassadorHorizontal from '../components/PassadorHorizontal.vue';
+import Header from '../components/Header.vue'
+const cont = [...filmes].sort(() => Math.random() - 0.5);
+
+const series = cont.filter(filme => filme.tipo === 'serie');
+const lancamentos = cont.filter(filme => filme.lancamento?.includes('2026'));
+const acao = cont.filter(filme => filme.genero?.includes('Ação') && filme.tipo ==='filme');
 </script>
 
 <style scoped>

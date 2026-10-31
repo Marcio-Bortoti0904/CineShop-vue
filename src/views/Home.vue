@@ -45,10 +45,10 @@
 <script setup>
 import { onMounted } from 'vue'
 import { categorias } from '../data/categoria.js'
-import CatCard from './CatCard.vue'
-import Header from './Header.vue'
+import CatCard from '../components/CatCard.vue'
+import Header from '../components/Header.vue'
 import Loading from './Loading.vue'
-import PassadorHorizontal from './PassadorHorizontal.vue'
+import PassadorHorizontal from '../components/PassadorHorizontal.vue'
 
 onMounted(() => {
   document.title = 'CineShop - Página inicial'

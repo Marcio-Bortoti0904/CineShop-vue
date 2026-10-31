@@ -55,7 +55,7 @@ export const filmes = [
       imagem: '/filmes/como-magica-2026.webp',
       lancamento: '2026',
       tipo: 'filme',
-      genero: ['Infantil', 'Fantasia']
+      genero: ['Infantil', 'Fantasia', 'Animação']
     },
 
     {
@@ -141,6 +141,7 @@ export const filmes = [
       imagem: '/filmes/mandaloriano-serie.jpg',
       tipo: 'serie'
     },
+
     {
       id: 20,
       nome: 'Star Wars - Uma Nova Esperança',
@@ -184,7 +185,7 @@ export const filmes = [
       nome: 'Sombra do Esquecimento',
       imagem: '/filmes/Sombra_Esquecida.png',
       tipo: 'filme',
-      genero: ['Terror']
+      genero: ['Terror', 'Mistério']
     },
 
     {
