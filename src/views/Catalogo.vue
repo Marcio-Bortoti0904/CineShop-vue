@@ -47,9 +47,15 @@
 
 <script setup>
 import { filmes } from '../data/filmes.js'
+<<<<<<< HEAD:src/views/Catalogo.vue
 import FilmeCard from '../components/Filmecard.vue';
 import PassadorHorizontal from '../components/PassadorHorizontal.vue';
 import Header from '../components/Header.vue'
+=======
+import FilmeCard from './Filmecard.vue';
+import PassadorHorizontal from './PassadorHorizontal.vue';
+import Header from './Header.vue'
+>>>>>>> e23b354c50cf4a0ecec664c9874677525f307386:src/components/views/Catalogo.vue
 const cont = [...filmes].sort(() => Math.random() - 0.5);
 
 const series = cont.filter(filme => filme.tipo === 'serie');
