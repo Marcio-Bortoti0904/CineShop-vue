@@ -1,11 +1,11 @@
 <template>
-  <main>
     <Loading />
     <header>
       <Header />
     </header>
     <!-- CONTEÚDO -->
-    <section class="conteudo" id="streaming">
+     <main class="conteudo-filmes">
+      <section class="conteudo" id="streaming">
       <h2>➣ Streaming</h2>
 
       <div ref="listaFilmes" class="filmes">
@@ -24,7 +24,7 @@
 
       <!-- Os produtos poderão ser adicionados aqui depois. -->
     </section>
-
+</main>
     <!-- MASCOTE VOLY -->
     <div class="mascot-container">
       <div class="mascot-bubble pixel-border">
@@ -39,7 +39,7 @@
         >
       </div>
     </div>
-  </main>
+  
 </template>
 
 <script setup>

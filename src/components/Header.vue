@@ -1,19 +1,21 @@
+
 <template>
   <header class="navbar">
     <button
       class="menu-toggle"
       @click="menuAberto = !menuAberto"
       :aria-expanded="menuAberto"
-      aria-label="Abrir ou fechar menu"
+      aria-label="Expandir ou recolher menu"
     >
       ☰
     </button>
 
-    <Menu :menuAberto="menuAberto" />
+    <img
+      id="logo"
+      src="/imagem/Logo.png"
+      alt="Logo CineShop"
+    >
 
-    <img id="login-image" src="/imagem/Logo.png" alt="Logo CineShop">
-
-    <!-- Pesquisa -->
     <div class="search-container">
       <input
         type="text"
@@ -23,41 +25,46 @@
       >
     </div>
 
-    <!-- Perfil -->
     <div class="user-profile">
       <span class="user-name">Você</span>
       <div class="user-avatar"></div>
     </div>
   </header>
+
+  <Menu :menuAberto="menuAberto" />
 </template>
+
 <script setup>
 import { ref } from 'vue'
 import Menu from '../components/Menu.vue'
-const menuAberto = ref(false)
+
+const menuAberto = ref(true)
 </script>
 
 <style scoped>
-/* CABEÇALHO */
 .navbar {
+  position: relative;
+  z-index: 100;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background:rgb(20, 20, 20);
-  border-bottom:6px solid rgb(0, 0, 0);
-  gap:16px;
-  align-items:center;
-  justify-content:space-between;
-  padding:14px 20px;
-  flex-wrap:wrap
+
+  background: rgb(20, 20, 20);
+  border-bottom: 6px solid black;
+
+  gap: 10px;
+  padding: 0 50px;
+  flex-wrap: wrap;
 }
 
 #logo {
-  width: 130px;
-  height: 125px;
+  width: 140px;
+  height: 120px;
   object-fit: contain;
+  padding: 2px;
 }
 
-/* PESQUISA */
 .search-container {
   flex-grow: 0.3;
 }
@@ -67,13 +74,12 @@ const menuAberto = ref(false)
   width: 100%;
   background-color: #262626;
   border-color: #444444;
-  color: #fff;
+  color: white;
   font-size: 15px;
   padding: 8px 12px;
   outline: none;
 }
 
-/* PERFIL */
 .user-profile {
   display: flex;
   align-items: center;
@@ -81,7 +87,7 @@ const menuAberto = ref(false)
 }
 
 .user-name {
-  color: #fff;
+  color: white;
   font-size: 20px;
 }
 
@@ -91,18 +97,20 @@ const menuAberto = ref(false)
   flex-shrink: 0;
   background-color: #ff88a3;
   border: 4px solid #555555;
-  background-image:
-    linear-gradient(45deg, #ff6680 25%, transparent 25%),
-    linear-gradient(-45deg, #ff6680 25%, transparent 25%);
-  background-size: 10px 10px;
 }
 
 .menu-toggle {
-  color: #ffffff;
+  color: white;
   background: none;
-  font-size: 32px;
+  font-size: 30px;
   cursor: pointer;
   border: none;
-  padding: 10px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+}
+
+.menu-toggle:hover {
+  background: #2c2c2c;
 }
 </style>

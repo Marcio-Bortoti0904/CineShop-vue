@@ -48,3 +48,30 @@ main {
   font-weight: bold;
   font-style: normal;
 }
+
+.conteudo-filmes {
+  margin-left: 76px;
+  width: calc(100% - 76px);
+  box-sizing: border-box;
+
+  transition:
+    margin-left 0.35s ease,
+    width 0.35s ease;
+}
+
+body:has(.sidebar.menu-aberto) .conteudo-filmes {
+  margin-left: 240px;
+  width: calc(100% - 240px);
+}
+
+@media (max-width: 768px) {
+  .conteudo-filmes {
+    margin-left: 64px;
+    width: calc(100% - 64px);
+  }
+
+  body:has(.sidebar.menu-aberto) .conteudo-filmes {
+    margin-left: 210px;
+    width: calc(100% - 210px);
+  }
+}
