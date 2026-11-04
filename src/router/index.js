@@ -5,7 +5,7 @@ import LandingPage from '../views/LandingPage.vue'
 import Filmes from '../views/Catalogo.vue'
 import FinalizarCadastro from '../views/FinalizarCadastro.vue'
 import Perfils from '../views/Perfils.vue'
-import Produtos from '../views/Produtos.vue'
+import Produtos from '../views/Produtos (1).vue'
 const routes = [
   {
     path: '/',
