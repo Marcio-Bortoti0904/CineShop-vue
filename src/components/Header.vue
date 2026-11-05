@@ -1,6 +1,7 @@
-
 <template>
   <header class="navbar">
+
+    <!-- BOTÃO DO MENU -->
     <button
       class="menu-toggle"
       @click="menuAberto = !menuAberto"
@@ -10,35 +11,48 @@
       ☰
     </button>
 
+    <!-- LOGOTIPO -->
     <img
       id="logo"
       src="/imagem/Logo.png"
       alt="Logo CineShop"
     >
 
-    <div class="search-container">
-      <input
-        type="text"
-        class="search-input pixel-border"
-        placeholder="Buscar..."
-        aria-label="Buscar filmes e produtos"
-      >
-    </div>
+    <!-- PESQUISA -->
+    <Busca />
 
-    <div class="user-profile">
-      <span class="user-name">Você</span>
-      <div class="user-avatar"></div>
-    </div>
+    <!-- AVATAR E IDENTIFICAÇÃO -->
+    <Perfil
+      :usuario="usuario"
+      @abrir="$emit('abrirPerfil')"
+    />
+
   </header>
 
+  <!-- MENU RETRÁTIL -->
   <Menu :menuAberto="menuAberto" />
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import Menu from '../components/Menu.vue'
 
+import Menu from '../components/Menu.vue'
+import Busca from '../components/busca.vue'
+import Perfil from './avatar-bot.vue'
+
+// ESTADO DO MENU
 const menuAberto = ref(true)
+
+// DADOS RECEBIDOS DA PÁGINA PRINCIPAL
+defineProps({
+  usuario: {
+    type: Object,
+    default: null
+  }
+})
+
+// EVENTO ENVIADO PARA A PÁGINA PRINCIPAL
+defineEmits(['abrirPerfil'])
 </script>
 
 <style scoped>

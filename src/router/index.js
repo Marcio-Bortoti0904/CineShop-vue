@@ -5,7 +5,7 @@ import LandingPage from '../views/LandingPage.vue'
 import Filmes from '../views/Catalogo.vue'
 import FinalizarCadastro from '../views/FinalizarCadastro.vue'
 import Perfils from '../views/Perfils.vue'
-import Produtos from '../views/Produtos (1).vue'
+import Geek from '../views/PixelShop – Loja Geek.vue'
 const routes = [
   {
     path: '/',
@@ -32,8 +32,8 @@ const routes = [
   },
 
   {
-    path: '/produtos',
-    component: Produtos
+    path: '/geek',
+    component: Geek
   }
 ]
 
