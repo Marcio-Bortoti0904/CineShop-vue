@@ -1,6 +1,4 @@
-<template>
-<!-- LOGIN -->
-        <template v-else-if="modalTipo === 'login'">
+<template v-else-if="modalTipo === 'login'">
           <h3>LOGIN</h3>
 
           <div class="f">
