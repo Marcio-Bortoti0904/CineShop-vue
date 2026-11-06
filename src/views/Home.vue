@@ -1,5 +1,4 @@
 <template>
-    <Loading />
     <header>
       <Header
       :usuario="usuario"
@@ -119,7 +118,6 @@ import { usuario } from '../data/usuario.js'
 
 import CatCard from '../components/CatCard.vue'
 import Header from '../components/Header.vue'
-import Loading from './Loading.vue'
 import PassadorHorizontal from '../components/PassadorHorizontal.vue'
 
 // CONTROLE DOS MODAIS
