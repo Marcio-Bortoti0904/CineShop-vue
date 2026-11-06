@@ -1,6 +1,5 @@
 <template>
     <main class="Final">
-      <Loading />
     <section class="dates">
       <img id="image" src="/imagem/Logo.png" alt="Logo CineShop">
       <h1>Finalize seu cadastro</h1>
@@ -61,7 +60,6 @@
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { cadastroTemporario } from '../data/cadastroTemporario.js'
-import Loading from './Loading.vue'
 
 const router = useRouter()
 
