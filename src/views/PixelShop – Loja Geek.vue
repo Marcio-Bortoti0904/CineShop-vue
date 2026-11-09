@@ -671,7 +671,6 @@ const vendas = ref([
   { pid: 6, qty: 3, cat: 'HQs e Mangás', v: 104.7 }
 ])
 
-import { usuario } from '../data/usuario.js'
 const carrinho = ref([])
 const categoriaAtual = ref('Todos')
 const busca = ref('')
