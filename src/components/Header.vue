@@ -41,7 +41,7 @@ import Busca from '../components/busca.vue'
 import Perfil from './avatar-bot.vue'
 
 // ESTADO DO MENU
-const menuAberto = ref(true)
+const menuAberto = ref(false)
 
 // DADOS RECEBIDOS DA PÁGINA PRINCIPAL
 defineProps({
