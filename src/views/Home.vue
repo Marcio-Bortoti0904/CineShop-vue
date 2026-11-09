@@ -114,8 +114,6 @@ import { onMounted, ref, reactive } from 'vue'
 
 // COMPONENTES
 import { categorias } from '../data/categoria.js'
-import { usuario } from '../data/usuario.js'
-
 import CatCard from '../components/CatCard.vue'
 import Header from '../components/Header.vue'
 import PassadorHorizontal from '../components/PassadorHorizontal.vue'
