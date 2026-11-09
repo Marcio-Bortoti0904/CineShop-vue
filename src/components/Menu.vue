@@ -6,27 +6,31 @@
     <nav class="menu">
 
       <RouterLink to="/home" class="menu-item" title="Início">
-        <span class="menu-icon">🏠</span>
+        <img class="menu-icon" src="/imagem/casa.png" alt="">
         <span class="menu-text">Início</span>
       </RouterLink>
 
       <RouterLink to="/filmes" class="menu-item" title="Streaming">
-        <span class="menu-icon">🎬</span>
+        <img class="menu-icon" src="/imagem/catalogo.png" alt="">
         <span class="menu-text">Catálogo</span>
+      </RouterLink>
+
+      <RouterLink to="/produtos" class="menu-item" title="Produtos">
+        <img class="menu-icon" src="/imagem/cesta.png" alt="">
+        <span class="menu-text">Shopping</span>
       </RouterLink>
 
       <div class="menu-divider"></div>
 
       <RouterLink to="/perfil" class="menu-item" title="Meu perfil">
-        <span class="menu-icon">👤</span>
+        <img class="menu-icon" src="/imagem/perfil.png" alt="">
         <span class="menu-text">Meu perfil</span>
       </RouterLink>
 
       <RouterLink to="/configuracoes" class="menu-item" title="Configurações">
-        <span class="menu-icon">⚙️</span>
+        <img class="menu-icon" src="/imagem/config.png" alt="">
         <span class="menu-text">Configurações</span>
       </RouterLink>
-
     </nav>
   </aside>
 </template>
@@ -78,10 +82,10 @@ defineProps({
 .menu-item {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 10px;
 
   min-height: 52px;
-  padding: 0 12px;
+  padding: 12px;
 
   color: white;
   text-decoration: none;
