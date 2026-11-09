@@ -1,6 +1,9 @@
 <template>
   <header>
-    <Header />
+    <Header
+      :usuario="usuario"
+      @abrirPerfil="abrirPerfilOuLogin"
+    />
   </header>
   <main class="conteudo-filmes">
     <section class="conteudo">
@@ -19,7 +22,6 @@
             <span class="fumaca fumaca-direita" aria-hidden="true"></span>
           </div>
           <div class="catalogo">
-            <div class="catalogo">
             <h1>➣ Ação</h1>
             <div ref="listaFilmes" class="filmes">
               <PassadorHorizontal>
@@ -42,7 +44,6 @@
             </PassadorHorizontal>
             </div> 
             </div>
-          </div>
     </section>
   </main>
 </template>
@@ -58,6 +59,18 @@ const cont = [...filmes].sort(() => Math.random() - 0.5);
 const series = cont.filter(filme => filme.tipo === 'serie');
 const lancamentos = cont.filter(filme => filme.lancamento?.includes('2026'));
 const acao = cont.filter(filme => filme.genero?.includes('Ação') && filme.tipo ==='filme');
+
+// ABRIR LOGIN OU PERFIL
+function abrirPerfilOuLogin() {
+
+  if (!usuario.value) {
+    modalTipo.value = 'login'
+  } else {
+    modalTipo.value = 'perfil'
+  }
+
+  modalAberto.value = true
+}
 </script>
 
 <style scoped>
