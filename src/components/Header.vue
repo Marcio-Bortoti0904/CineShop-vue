@@ -2,6 +2,7 @@
   <header class="navbar">
 
     <!-- BOTÃO DO MENU -->
+    <div>
     <button
       class="menu-toggle"
       @click="menuAberto = !menuAberto"
@@ -14,10 +15,10 @@
     <!-- LOGOTIPO -->
     <img
       id="logo"
-      src="/imagem/Logo.png"
+      src="/imagem/pixil-frame-0 (1).png"
       alt="Logo CineShop"
     >
-
+</div>
     <!-- PESQUISA -->
     <Busca />
 
