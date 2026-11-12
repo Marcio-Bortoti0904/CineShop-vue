@@ -15,7 +15,7 @@
         <span class="menu-text">Catálogo</span>
       </RouterLink>
 
-      <RouterLink to="/produtos" class="menu-item" title="Produtos">
+      <RouterLink to="/geek" class="menu-item" title="Produtos">
         <img class="menu-icon" src="/imagem/cesta.png" alt="">
         <span class="menu-text">Shopping</span>
       </RouterLink>
