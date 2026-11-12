@@ -11,7 +11,6 @@
   <!-- COMPONENTE DE PESQUISA -->
   <Busca
     v-model="busca"
-    placeholder="🔍 Buscar produtos..."
   />
 
   <div class="right">
@@ -1121,8 +1120,7 @@ function confirmarCompra() {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
-
+@import url('../css/base.css');
 .pixel-shop {
   --bg: #3B4A66;
   --bar: #26324A;
