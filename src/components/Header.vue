@@ -1,8 +1,7 @@
 <template>
   <header class="navbar">
-
     <!-- BOTÃO DO MENU -->
-    <div>
+    <div class="logo-container">
     <button
       class="menu-toggle"
       @click="menuAberto = !menuAberto"
@@ -57,6 +56,12 @@ defineEmits(['abrirPerfil'])
 </script>
 
 <style scoped>
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
 .navbar {
   position: relative;
   z-index: 100;

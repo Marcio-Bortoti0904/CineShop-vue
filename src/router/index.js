@@ -4,17 +4,11 @@ import Home from '../views/Home.vue'
 import LandingPage from '../views/LandingPage.vue'
 import Filmes from '../views/Catalogo.vue'
 import FinalizarCadastro from '../views/FinalizarCadastro.vue'
-import Perfils from '../views/Perfils.vue'
 import Geek from '../views/PixelShop – Loja Geek.vue'
 const routes = [
   {
     path: '/',
     component: LandingPage
-  },
-  
-  {
-    path: '/perfils',
-    component: Perfils
   },
 
   {

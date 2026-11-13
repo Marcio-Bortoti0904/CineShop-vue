@@ -6,29 +6,29 @@
     <nav class="menu">
 
       <RouterLink to="/home" class="menu-item" title="Início">
-        <img class="menu-icon" src="/imagem/casa.png" alt="">
+        <img class="icone" src="/imagem/casa.png" alt="">
         <span class="menu-text">Início</span>
       </RouterLink>
 
       <RouterLink to="/filmes" class="menu-item" title="Streaming">
-        <img class="menu-icon" src="/imagem/catalogo.png" alt="">
+        <img class="icone" src="/imagem/catalogo.png" alt="">
         <span class="menu-text">Catálogo</span>
       </RouterLink>
 
       <RouterLink to="/geek" class="menu-item" title="Produtos">
-        <img class="menu-icon" src="/imagem/cesta.png" alt="">
+        <img class="icone" src="/imagem/cesta.png" alt="">
         <span class="menu-text">Shopping</span>
       </RouterLink>
 
       <div class="menu-divider"></div>
 
       <RouterLink to="/perfil" class="menu-item" title="Meu perfil">
-        <img class="menu-icon" src="/imagem/perfil.png" alt="">
+        <img class="icone" src="/imagem/perfil.png" alt="">
         <span class="menu-text">Meu perfil</span>
       </RouterLink>
 
       <RouterLink to="/configuracoes" class="menu-item" title="Configurações">
-        <img class="menu-icon" src="/imagem/config.png" alt="">
+        <img class="icone" src="/imagem/config.png" alt="">
         <span class="menu-text">Configurações</span>
       </RouterLink>
     </nav>
@@ -47,20 +47,18 @@ defineProps({
 <style scoped>
 .sidebar {
   position: fixed;
-  top: 0;
+  top: 126;
   left: 0;
 
-  height: 100vh;
+  height: calc(100vh - 126px);
   box-sizing: border-box;
 
   background: rgb(20, 20, 20);
   border-right: 2px solid #000;
 
-  padding-top: 150px;
+  padding-top: 15px;
   overflow-x: hidden;
-
   z-index: 15;
-
   transition: width 0.35s ease;
 }
 
@@ -75,7 +73,7 @@ defineProps({
 .menu {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
   padding: 0 10px;
 }
 
@@ -85,11 +83,11 @@ defineProps({
   gap: 10px;
 
   min-height: 52px;
-  padding: 12px;
+  padding: 16px;
 
   color: white;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 12px;
 
   white-space: nowrap;
   box-sizing: border-box;
@@ -101,10 +99,11 @@ defineProps({
   background: #303030;
 }
 
-.menu-icon {
-  min-width: 28px;
-  text-align: center;
-  font-size: 23px;
+.icone {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .menu-text {
@@ -125,10 +124,11 @@ defineProps({
 .menu-divider {
   height: 1px;
   background: #444;
-  margin: 10px 0;
+  margin: 10px;
 }
 
 .menu-item.router-link-active {
   background: #303030;
+  border-left: 4px solid #FFD600;
 }
 </style>

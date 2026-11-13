@@ -13,6 +13,10 @@ app.use(cors({
 
 app.use(express.json())
 
+const filmes = require('./routes/filmes');
+
+app.use('/api/filmes', filmes);
+
 app.get('/', (req, res) => {
     res.json({
         mensagem: 'API do CineShop funcionando!'

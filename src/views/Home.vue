@@ -7,66 +7,22 @@
       <div
   v-if="modalAberto"
   class="perfil-overlay"
-  @click.self="modalAberto = false"
+  @click.self="fecharModal"
 >
   <div class="perfil-box">
 
     <!-- BOTÃO DE FECHAR -->
     <button
       class="fechar"
-      @click="modalAberto = false"
+      @click="fecharModal"
     >
       X
     </button>
-
-    <!-- LOGIN -->
-    <template v-if="modalTipo === 'login'">
-
-      <h2>ENTRAR NO CINESHOP</h2>
-
-      <label>NOME</label>
-      <input
-        v-model="loginDados.nome"
-        placeholder="Seu nome"
-      >
-
-      <label>E-MAIL</label>
-      <input
-        v-model="loginDados.email"
-        type="email"
-        placeholder="voce@email.com"
-      >
-
-      <label>SENHA</label>
-      <input
-        v-model="loginDados.senha"
-        type="password"
-        placeholder="Sua senha"
-      >
-
-      <button @click="entrar">
-        ENTRAR
-      </button>
-
-    </template>
-
-    <!-- PERFIL -->
-    <template v-else-if="modalTipo === 'perfil'">
-
-      <h2>MEU PERFIL</h2>
-
-      <p>👾 {{ usuario.name }}</p>
-
-      <p>
-        {{ usuario.role === 'seller' ? 'VENDEDOR' : 'USUÁRIO' }}
-      </p>
-
-      <button @click="sair">
-        SAIR
-      </button>
-
-    </template>
-
+    <Login_perfil
+      :modal-tipo="modalTipo"
+      :login-dados="loginDados"
+      @entrar="entrar"
+    />
   </div>
 </div>
     </header>
@@ -92,22 +48,9 @@
       <!-- Os produtos poderão ser adicionados aqui depois. -->
     </section>
 </main>
-    <!-- MASCOTE VOLY -->
-    <div class="mascot-container">
-      <div class="mascot-bubble pixel-border">
-        Olá! Sou a Voly. Precisa de ajuda?
-      </div>
-
-      <div class="mascot-image-wrapper">
-        <img
-          src="/imagem/Voly.png"
-          alt="Mascote Voly"
-          class="mascot-img"
-        >
-      </div>
-    </div>
-  
+<Mascote />
 </template>
+
 
 <script setup>
 import { onMounted, ref, reactive } from 'vue'
@@ -117,8 +60,13 @@ import { categorias } from '../data/categoria.js'
 import CatCard from '../components/CatCard.vue'
 import Header from '../components/Header.vue'
 import PassadorHorizontal from '../components/PassadorHorizontal.vue'
+import Mascote from '../components/Mascote.vue'
+import Login_perfil from './Login_perfil.vue'
 
-// CONTROLE DOS MODAIS
+// USUÁRIO
+const usuario = ref(null)
+
+// CONTROLE DO MODAL
 const modalAberto = ref(false)
 const modalTipo = ref('')
 
@@ -142,7 +90,7 @@ function abrirPerfilOuLogin() {
   modalAberto.value = true
 }
 
-// REALIZAR LOGIN
+// RECEBER TENTATIVA DE LOGIN
 function entrar() {
 
   if (!loginDados.nome.trim()) {
@@ -150,117 +98,28 @@ function entrar() {
     return
   }
 
-  usuario.value = {
-    name: loginDados.nome.trim(),
-    role: loginDados.role
+  if (!loginDados.email.trim() || !loginDados.senha) {
+    alert('Informe seu e-mail e senha!')
+    return
   }
 
-  modalAberto.value = false
+  // A autenticação real será conectada ao backend.
+  alert('Formulário preenchido! Falta conectar ao servidor.')
+
 }
 
-// SAIR DA CONTA
-function sair() {
-  usuario.value = null
+// FECHAR MODAL
+function fecharModal() {
   modalAberto.value = false
+  modalTipo.value = ''
 }
 
-// CONFIGURAÇÕES INICIAIS DA PÁGINA
 onMounted(() => {
-
   document.title = 'CineShop - Página inicial'
-
-  const loadingScreen = document.getElementById('loading-screen')
-
-  if (loadingScreen) {
-
-    setTimeout(() => {
-      loadingScreen.classList.add('fade-out')
-    }, 1500)
-
-    setTimeout(() => {
-      loadingScreen.style.display = 'none'
-    }, 2000)
-
-  }
 })
 </script>
 
 <style scoped>
 @import url('../css/base.css');
-.perfil-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 200;
-
-  background: rgba(0, 0, 0, 0.75);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  padding: 20px;
-}
-
-/* CAIXA DO PERFIL */
-.perfil-box {
-  position: relative;
-
-  width: min(450px, 100%);
-
-  background: #121212;
-  color: white;
-
-  border: 4px solid black;
-  box-shadow: 8px 8px 0 black;
-
-  padding: 35px 25px;
-
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-/* TÍTULO */
-.perfil-box h2 {
-  font-family: "Press Start 2P", monospace;
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-/* CAMPOS */
-.perfil-box input {
-  background: #262626;
-  color: white;
-
-  border: 3px solid #444;
-
-  padding: 10px;
-  font-size: 16px;
-}
-
-/* BOTÕES */
-.perfil-box button {
-  background: #FFD600;
-  color: black;
-
-  border: 3px solid black;
-
-  padding: 10px;
-  cursor: pointer;
-
-  font-family: "Press Start 2P", monospace;
-  font-size: 10px;
-}
-
-/* FECHAR MODAL */
-.perfil-box .fechar {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-
-  background: #E8525A;
-  color: white;
-
-  padding: 6px 10px;
-}
+@import url('../css/avatar-bot.css');
 </style>
