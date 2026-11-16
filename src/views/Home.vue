@@ -53,7 +53,9 @@
 
 
 <script setup>
-import { onMounted, ref, reactive } from 'vue'
+import { onMounted} from 'vue'
+
+import { useAuth } from '../data/avatar.js'
 
 // COMPONENTES
 import { categorias } from '../data/categoria.js'
@@ -63,60 +65,19 @@ import PassadorHorizontal from '../components/PassadorHorizontal.vue'
 import Mascote from '../components/Mascote.vue'
 import Login_perfil from './Login_perfil.vue'
 
-// USUÁRIO
-const usuario = ref(null)
-
-// CONTROLE DO MODAL
-const modalAberto = ref(false)
-const modalTipo = ref('')
-
-// DADOS DO LOGIN
-const loginDados = reactive({
-  nome: '',
-  email: '',
-  senha: '',
-  role: 'user'
-})
-
-// ABRIR LOGIN OU PERFIL
-function abrirPerfilOuLogin() {
-
-  if (!usuario.value) {
-    modalTipo.value = 'login'
-  } else {
-    modalTipo.value = 'perfil'
-  }
-
-  modalAberto.value = true
-}
-
-// RECEBER TENTATIVA DE LOGIN
-function entrar() {
-
-  if (!loginDados.nome.trim()) {
-    alert('Informe seu nome!')
-    return
-  }
-
-  if (!loginDados.email.trim() || !loginDados.senha) {
-    alert('Informe seu e-mail e senha!')
-    return
-  }
-
-  // A autenticação real será conectada ao backend.
-  alert('Formulário preenchido! Falta conectar ao servidor.')
-
-}
-
-// FECHAR MODAL
-function fecharModal() {
-  modalAberto.value = false
-  modalTipo.value = ''
-}
-
 onMounted(() => {
   document.title = 'CineShop - Página inicial'
 })
+
+const {
+  usuario,
+  modalAberto,
+  modalTipo,
+  loginDados,
+  abrirPerfilOuLogin,
+  entrar,
+  fecharModal
+} = useAuth()
 </script>
 
 <style scoped>
