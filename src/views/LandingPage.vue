@@ -328,6 +328,7 @@
     </section>
   </section> 
   </main>
+  <Mascote />
 </template>
 <script setup>
 import { ref, onMounted } from 'vue'
@@ -338,6 +339,7 @@ import { cadastroTemporario } from '../data/cadastroTemporario.js'
 import PassadorHorizontal from '../components/PassadorHorizontal.vue';
 import FilmeCard from '../components/Filmecard.vue'
 import ProdutoCard from '../components/Produtocard.vue'
+import Mascote from '../components/Mascote.vue'
 import { filmes } from '../data/filmes.js'
 import { produtos } from '../data/produtos.js'
 
