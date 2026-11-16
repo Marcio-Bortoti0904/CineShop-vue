@@ -1,7 +1,7 @@
 <template>
 <div class="mascot-container">
     <div class="mascot-bubble pixel-border">
-        <p>Olá! Sou a Voly. Precisa de ajuda?</p>
+        <p id="texto">Olá! Sou a Voly. Precisa de ajuda?</p>
       </div>
     <div class="mascot-image-wrapper">
         <img
@@ -12,9 +12,6 @@
     </div>
 </div>
 </template>
-
-<script setup>
-</script>
 
 <style scoped>
 @import url('../css/base.css');
@@ -27,22 +24,24 @@
   flex-direction: column;
   align-items: center;
   z-index: 100;
+  animation: mascot-float 3s ease-in-out infinite;
 }
 
 .mascot-bubble {
   position: relative;
   background-color: #1a1a1a;
-  color: #00ffcc;
   padding: 10px;
-  font-size: 8px;
-  font-family: 'MinhaFonte', sans-serif;
-  text-transform: uppercase;
   max-width: 180px;
-  text-align: center;
   margin-bottom: 12px;
   line-height: 1.4;
   border-color: #333333;
-  animation: mascot-float 3s ease-in-out infinite;
+}
+
+.mascot-bubble #texto {
+  font-family: 'MinhaFonte', sans-serif;
+  font-size: 20px;
+  color: #00ffcc;
+  text-align: center;
 }
 
 .mascot-bubble::after {
@@ -59,7 +58,7 @@
 }
 
 .mascot-image-wrapper {
-  width: 80px;
+  width: 150px;
   display: flex;
   justify-content: center;
   animation: mascot-float 3s ease-in-out infinite;
@@ -69,7 +68,7 @@
   width: 100%;
   height: auto;
   image-rendering: pixelated;
-  filter: drop-shadow(0px 0px 8px rgb(255, 16, 16))
+  filter: drop-shadow(0px 0px 8px rgb(0, 247, 255))
           drop-shadow(0px 0px 12px blue);
 }
 
