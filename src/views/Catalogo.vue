@@ -85,54 +85,17 @@ const series = cont.filter(filme => filme.tipo === 'serie');
 const lancamentos = cont.filter(filme => filme.lancamento?.includes('2026'));
 const acao = cont.filter(filme => filme.genero?.includes('Ação') && filme.tipo ==='filme');
 
-const usuario = ref(null)
+import { useAuth } from '../data/avatar.js'
 
-// CONTROLE DO MODAL
-const modalAberto = ref(false)
-const modalTipo = ref('')
-
-// DADOS DO LOGIN
-const loginDados = reactive({
-  nome: '',
-  email: '',
-  senha: '',
-  role: 'user'
-})
-
-// ABRIR LOGIN OU PERFIL
-function abrirPerfilOuLogin() {
-
-  if (!usuario.value) {
-    modalTipo.value = 'login'
-  } else {
-    modalTipo.value = 'perfil'
-  }
-
-  modalAberto.value = true
-}
-
-// RECEBER TENTATIVA DE LOGIN
-function entrar() {
-
-  if (!loginDados.nome.trim()) {
-    alert('Informe seu nome!')
-    return
-  }
-
-  if (!loginDados.email.trim() || !loginDados.senha) {
-    alert('Informe seu e-mail e senha!')
-    return
-  }
-
-  // A autenticação real será conectada ao backend.
-  alert('Formulário preenchido! Falta conectar ao servidor.')
-
-}
-
-function fecharModal() {
-  modalAberto.value = false
-  modalTipo.value = ''
-}
+const {
+  usuario,
+  modalAberto,
+  modalTipo,
+  loginDados,
+  abrirPerfilOuLogin,
+  entrar,
+  fecharModal
+} = useAuth()
 
 onMounted(() => {
   document.title = 'CineShop - Página inicial'
