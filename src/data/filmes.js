@@ -5,7 +5,7 @@ export const filmes = [
       imagem: '/filmes/HE-MAN.png',
       lancamento: '2026',
       tipo: 'filme',
-      genero: ['Ação']
+      genero: ['Ação', 'Comédia']
     },
 
     {
@@ -46,8 +46,8 @@ export const filmes = [
       id: 6,
       imagem: '/filmes/3guerra.png',
       lancamento: '2026',
-      tipo: 'serie',
-      genero: ['Paródia', 'Ação', 'Thriller Político'],
+      tipo: 'filme',
+      genero: ['Guerra','Paródia', 'Ação', 'Thriller Político'],
     },
 
     {
@@ -63,7 +63,7 @@ export const filmes = [
       imagem: '/filmes/Spider-Noir.webp',
       lancamento: '2026',
       tipo: 'serie',
-      genero: ['Super-heroi', 'Noir', 'Ação'],
+      genero: ['Super-heroi', 'Noir', 'Ação', 'Crime']
     },
 
     {
@@ -81,6 +81,7 @@ export const filmes = [
     {
       id: 11,
       imagem: '/filmes/DK.jpg',
+      genero: ['Ação', 'Mistério', 'Crime', 'Suspense'],
       tipo: 'filme',
     },
 
@@ -100,9 +101,8 @@ export const filmes = [
     {
       id: 14,
       imagem: '/filmes/BATMAN22.jpg',
-      genero: ['Ação'],
+      genero: ['Ação', 'Mistério', 'Crime'],
       tipo: 'filme'
-      
     },
 
     {
@@ -124,7 +124,7 @@ export const filmes = [
       nome: 'Sonic - O filme',
       imagem: '/filmes/sonic1.jpg',
       tipo: 'filme',
-      genero: ['Ação', 'Aventura', 'Comédia', 'Ficção científica', 'Família']
+      genero: ['Ação', 'Aventura', 'Comédia', 'Ficção Científica', 'Família']
     },
 
     {
@@ -139,7 +139,8 @@ export const filmes = [
       id: 19,
       nome: 'Mandaloriano',
       imagem: '/filmes/mandaloriano-serie.jpg',
-      tipo: 'serie'
+      tipo: 'serie',
+      genero: ['Ficção Científica', 'Ação']
     },
 
     {
@@ -192,14 +193,16 @@ export const filmes = [
       id: 26,
       nome: 'Areias do Eterno',
       imagem: '/filmes/Areias_eterno.png',
-      tipo: 'filme'
+      tipo: 'filme',
+      genero: ['Aventura', 'Terror']
     },
 
     {
       id: 27,
       nome: 'Matrix',
       imagem: '/filmes/Matrix.png',
-      tipo: 'filme'
+      tipo: 'filme',
+      genero: ['Ficção Científica', 'Ação']
     },
 
     {
@@ -215,7 +218,8 @@ export const filmes = [
       nome: 'Devorador de Estrelas',
       imagem: '/filmes/devorador_estrelas.png',
       tipo: 'filme',
-      lancamento: '2026'
+      lancamento: '2026',
+      genero: ['Ficção Científica']
     },
 
     {

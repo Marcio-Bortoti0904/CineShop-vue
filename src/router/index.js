@@ -5,6 +5,8 @@ import LandingPage from '../views/LandingPage.vue'
 import Filmes from '../views/Catalogo.vue'
 import FinalizarCadastro from '../views/FinalizarCadastro.vue'
 import Geek from '../views/PixelShop – Loja Geek.vue'
+import Voly from '../views/interface_Voly.vue'
+
 const routes = [
   {
     path: '/',
@@ -28,6 +30,11 @@ const routes = [
   {
     path: '/geek',
     component: Geek
+  },
+
+  {
+    path: '/voly',
+    component: Voly
   }
 ]
 
