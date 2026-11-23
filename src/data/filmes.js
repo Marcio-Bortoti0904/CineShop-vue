@@ -117,7 +117,7 @@ export const filmes = [
       id: 16,
       imagem: '/filmes/Iron_Man_poster.jpg',
       tipo: 'filme',
-      genero: ['Ação']
+      genero: ['Ação', 'Ficção Científica']
     },
 
     {
@@ -125,7 +125,7 @@ export const filmes = [
       nome: 'Sonic - O filme',
       imagem: '/filmes/sonic1.jpg',
       tipo: 'filme',
-      genero: ['Ação', 'Aventura', 'Comédia', 'Ficção Científica', 'Família']
+      genero: ['Ação', 'Aventura', 'Comédia', 'Ficção Científica', 'Família', 'Infantil']
     },
 
     {
@@ -211,7 +211,8 @@ export const filmes = [
       nome: 'Michael',
       imagem: '/filmes/Michael.jpg',
       tipo: 'filme',
-      lancamento: '2026'
+      lancamento: '2026',
+      genero: ['Documentário', 'Musical']
     },
 
     {
@@ -228,7 +229,8 @@ export const filmes = [
       nome: 'Super Mario Galaxy',
       imagem: '/filmes/Mario2.png',
       tipo: 'filme',
-      lancamento: '2026'
+      lancamento: '2026',
+      genero: ['Infantil']
     },
     
     {
@@ -242,7 +244,7 @@ export const filmes = [
     {
       id: 32,
       nome: 'Superman(2025)',
-      imagem: '/filmes/superman(2025).jpg',
+      imagem: '/filmes/superman2025.png',
       genero: ['Ficção Científica', 'Ação'],
       tipo: 'filme',
       lancamento: '2025'
@@ -251,7 +253,7 @@ export const filmes = [
     {
       id: 33,
       nome: 'Senhor dos Anéis - A Sociedade do Anel',
-      imagem: '/filmes/senhor_aneis_1.jpg',
+      imagem: '/filmes/senhor_aneis_1.png',
       genero: ['Fantasia', 'Ação', 'Aventura'],
       tipo: 'filme',
       lancamento: '2025'
@@ -287,7 +289,7 @@ export const filmes = [
     {
       id: 37,
       nome: 'Dragon-Ball - A Batalha dos deuses',
-      genero: ['Anime', 'Ação'],
+      genero: ['Anime', 'Ação','Infantil'],
       tipo: 'filme',
       imagem: '/filmes/Dragonball-bs.png'
     }
