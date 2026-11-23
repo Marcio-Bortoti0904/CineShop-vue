@@ -56,6 +56,7 @@ defineEmits(['abrirPerfil'])
 </script>
 
 <style scoped>
+@import url('../css/base.css')
 .logo-container {
   display: flex;
   align-items: center;
@@ -76,13 +77,6 @@ defineEmits(['abrirPerfil'])
   gap: 10px;
   padding: 0 50px;
   flex-wrap: wrap;
-}
-
-#logo {
-  width: 140px;
-  height: 120px;
-  object-fit: contain;
-  padding: 2px;
 }
 
 .search-container {

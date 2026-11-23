@@ -100,27 +100,27 @@
           <div class="secao-motivos">
             <h1>➣ Mais motivos para ter:</h1>
             <div class="motivos">
-              <div class="Bloco">
+              <div class="Bloco login-box">
               <h2>Entretenimento</h2>
               <p>Filmes e séries para aproveitar seu tempo.</p>
               <img id="Elemento" src="/imagem/pngtree-classic-vintage-tv-clipart-old-school-television-png-image_15793935.png" alt="">
             </div>
-            <div class="Bloco">
+            <div class="Bloco login-box">
               <h2>Produtos</h2>
               <p>Encontre produtos inspirados no que você gosta.</p>
               <img src="/imagem/carrinho.png" alt="">
             </div>
-            <div class="Bloco">
+            <div class="Bloco login-box">
               <h2>Tudo em um lugar</h2>
               <p>Assista e compre em uma só plataforma.</p>
               <img src="/imagem/rolo-cinema.png" alt="">
             </div>
-            <div class="Bloco">
+            <div class="Bloco login-box">
               <h2>Experiência personalizada</h2>
               <p>Encontre filmes, séries e produtos de acordo com seus interesses.</p>
               <img src="/imagem/oculos3d.png" alt="">
             </div>
-            <div class="Bloco">
+            <div class="Bloco login-box">
               <h2>Aproveite de casa</h2>
               <p>Entretenimento e produtos sem precisar sair de casa.</p>
               <img src="/imagem/desc.png" alt="">
@@ -180,7 +180,7 @@
                   />
                 </PassadorHorizontal>
                 </div>
-                <h1>➣ Terror</h1>
+                <h1>➣ Terror em você, não em mim!</h1>
                 <div ref="listaFilmes" class="filmes">
                   <PassadorHorizontal>
                     <FilmeCard 
@@ -190,7 +190,7 @@
                     />
                   </PassadorHorizontal>
                   </div>
-                <h1>➣ Comédia</h1>
+                <h1>➣ Comédia, isso me faz rir!</h1>
                 <div ref="listaFilmes" class="filmes">
                   <PassadorHorizontal>
                     <FilmeCard 
@@ -200,7 +200,7 @@
                     />
                   </PassadorHorizontal>
                 </div>
-                <h1>➣ Animação</h1>
+                <h1>➣ Minha Animação é linda!</h1>
                 <div ref="listaFilmes" class="filmes">
                   <PassadorHorizontal>
                     <FilmeCard 
@@ -210,7 +210,7 @@
                     />
                   </PassadorHorizontal>
                 </div>
-                <h1>➣ Suspense e Mistério</h1>
+                <h1>➣ Que Suspense e Mistério!</h1>
                 <div ref="listaFilmes" class="filmes">
                   <PassadorHorizontal>
                     <FilmeCard 
@@ -220,7 +220,7 @@
                     />
                   </PassadorHorizontal>
                 </div>
-                <h1>➣ Drama</h1>
+                <h1>➣ Não chore no Drama</h1>
                 <div ref="listaFilmes" class="filmes">
                   <PassadorHorizontal>
                     <FilmeCard 
@@ -230,7 +230,7 @@
                     />
                   </PassadorHorizontal>
                 </div>
-                <h1>➣ Aventura</h1>
+                <h1>➣ Aventure-se sem sair de casa</h1>
                 <div ref="listaFilmes" class="filmes">
                   <PassadorHorizontal>
                     <FilmeCard 
@@ -240,7 +240,7 @@
                     />
                   </PassadorHorizontal>
                 </div>
-                <h1>➣ Documentario</h1>
+                <h1>➣ Documentarios de mais de 90 minutos</h1>
                 <div ref="listaFilmes" class="filmes">
                   <PassadorHorizontal>
                     <FilmeCard 
@@ -250,7 +250,7 @@
                     />
                   </PassadorHorizontal>
                 </div>
-                <h1>➣ Musical</h1>
+                <h1>➣ Cante conosco</h1>
                 <div ref="listaFilmes" class="filmes">
                   <PassadorHorizontal>
                     <FilmeCard 
@@ -260,7 +260,7 @@
                     />
                   </PassadorHorizontal>
                 </div>
-                <h1>➣ Guerra</h1>
+                <h1>➣ Os melhores filmes de Guerra</h1>
                 <div ref="listaFilmes" class="filmes">
                   <PassadorHorizontal>
                     <FilmeCard 
@@ -270,7 +270,7 @@
                     />
                   </PassadorHorizontal>
                 </div>
-                <h1>➣ Crime</h1>
+                <h1>➣ O Crime compensa nesses filmes</h1>
                 <div ref="listaFilmes" class="filmes">
                   <PassadorHorizontal>
                     <FilmeCard 
@@ -280,7 +280,7 @@
                     />
                   </PassadorHorizontal>
                 </div>
-                <h1>➣ Super-herói</h1>
+                <h1>➣ Todo mundo quer ver um Super-herói</h1>
                 <div ref="listaFilmes" class="filmes">
                   <PassadorHorizontal>
                     <FilmeCard 
@@ -290,7 +290,7 @@
                     />
                   </PassadorHorizontal>
                 </div>
-                <h1>➣ Anime</h1>
+                <h1>➣ Fique animado vendo um Anime</h1>
                 <div ref="listaFilmes" class="filmes">
                   <PassadorHorizontal>
                     <FilmeCard 
@@ -300,7 +300,7 @@
                     />
                   </PassadorHorizontal>
                 </div>
-                <h1>➣ Infantil</h1>
+                <h1>➣ Deixe seu lado Infantil solto</h1>
                 <div ref="listaFilmes" class="filmes">
                   <PassadorHorizontal>
                     <FilmeCard 
@@ -328,7 +328,6 @@
     </section>
   </section> 
   </main>
-  <Mascote />
 </template>
 <script setup>
 import { ref, onMounted } from 'vue'
@@ -339,7 +338,6 @@ import { cadastroTemporario } from '../data/cadastroTemporario.js'
 import PassadorHorizontal from '../components/PassadorHorizontal.vue';
 import FilmeCard from '../components/Filmecard.vue'
 import ProdutoCard from '../components/Produtocard.vue'
-import Mascote from '../components/Mascote.vue'
 import { filmes } from '../data/filmes.js'
 import { produtos } from '../data/produtos.js'
 
@@ -397,4 +395,5 @@ function realizarAcao() {
 
 <style scoped>
 @import url('../css/base.css');
+
 </style>

@@ -1,16 +1,17 @@
 <template>
-  <button
-    class="user"
-    @click="$emit('abrir')"
-  >
-    <span class="avatar">👾</span>
-
-    <span>
-      {{ usuario
-        ? (usuario.role === 'seller' ? 'VENDEDOR' : 'USUÁRIO')
-        : 'ENTRAR' }}
-    </span>
-  </button>
+      <button
+        class="user"
+        @click="$emit('abrir')"
+      >
+        <span class="avatar">👾</span>
+        <span>
+          <h2>
+          {{ usuario
+            ? (usuario.role === 'seller' ? 'VENDEDOR' : 'USUÁRIO')
+            : 'ENTRAR' }}
+          </h2>
+        </span>
+      </button>
 </template>
 
 <script setup>
@@ -25,7 +26,6 @@ defineEmits(['abrir'])
 </script>
 
 <style scoped>
-/* ESTRUTURA DO BOTÃO DE PERFIL */
 .user {
   display: flex;
   align-items: center;
@@ -36,7 +36,6 @@ defineEmits(['abrir'])
 
   cursor: pointer;
 
-  font-family: "Press Start 2P", monospace;
   font-size: 10px;
 
   color: #F2F5FA;

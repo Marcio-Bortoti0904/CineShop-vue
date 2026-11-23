@@ -9,7 +9,7 @@ const app = express()
 // CORS: frontend em outro endereço (Vite) enviando cookie de sessão
 const origensPermitidas = (process.env.FRONTEND_URL || 'http://localhost:5173').split(',')
 app.use(cors({ origin: origensPermitidas, credentials: true }))
-app.use(express.json())
+app.use(express.json({ limit: '2mb' }))
 
 app.use(session({
     secret: process.env.SESSION_SECRET || 'troque-este-segredo-no-env',
@@ -22,7 +22,6 @@ app.use('/api/auth', require('./routes/auth'))
 app.use('/api/filmes', require('./routes/filmes'))
 app.use('/api/produtos', require('./routes/produtos'))
 app.use('/api/favoritos', require('./routes/favoritos'))
-app.use('/api/carrinho', require('./routes/carrinho'))
 app.use('/api/pedidos', require('./routes/pedidos'))
 app.use('/api/vendedor', require('./routes/vendedor'))
 app.use('/api/mensagens', require('./routes/mensagens'))

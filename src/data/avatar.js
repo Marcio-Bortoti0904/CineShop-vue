@@ -1,34 +1,54 @@
 import { ref, reactive } from 'vue'
+import { api } from '../api.js'
+
+// ===== ESTADO GLOBAL (compartilhado por todas as páginas) =====
+export const usuario = ref(null)
+export const sessaoCarregada = ref(false)
+
+let promessaSessao = null
+
+// A API devolve "nome"; as telas usam "name"
+function normalizar(dados) {
+  return dados ? { ...dados, name: dados.nome } : null
+}
+
+// Pergunta ao backend quem está logado (roda só uma vez)
+export function carregarSessao() {
+  if (!promessaSessao) {
+    promessaSessao = api('/auth/me')
+      .then((dados) => { usuario.value = normalizar(dados) })
+      .catch(() => { usuario.value = null })
+      .finally(() => { sessaoCarregada.value = true })
+  }
+  return promessaSessao
+}
 
 export function useAuth() {
-  // USUÁRIO
-  const usuario = ref(null)
+  carregarSessao()
 
-  // CONTROLE DO MODAL
+  // CONTROLE DO MODAL (de cada página)
   const modalAberto = ref(false)
   const modalTipo = ref('')
 
-  // DADOS DO LOGIN
+  // DADOS DO FORMULÁRIO (modo: 'entrar' ou 'cadastro')
   const loginDados = reactive({
+    modo: 'entrar',
     nome: '',
     email: '',
     senha: '',
-    role: 'user'
+    role: 'user',
+    lembrar: true
   })
 
-  // ABRIR LOGIN OU PERFIL
   function abrirPerfilOuLogin() {
-    if (!usuario.value) {
-      modalTipo.value = 'login'
-    } else {
-      modalTipo.value = 'perfil'
-    }
+    modalTipo.value = usuario.value ? 'perfil' : 'login'
     modalAberto.value = true
   }
 
-  // RECEBER TENTATIVA DE LOGIN
-  function entrar() {
-    if (!loginDados.nome.trim()) {
+  async function entrar() {
+    const cadastro = loginDados.modo === 'cadastro'
+
+    if (cadastro && !loginDados.nome.trim()) {
       alert('Informe seu nome!')
       return
     }
@@ -38,16 +58,49 @@ export function useAuth() {
       return
     }
 
-    alert('Formulário preenchido! Falta conectar ao servidor.')
+    try {
+      const dados = cadastro
+        ? await api('/auth/register', {
+            method: 'POST',
+            body: {
+              nome: loginDados.nome,
+              email: loginDados.email,
+              senha: loginDados.senha,
+              role: loginDados.role
+            }
+          })
+        : await api('/auth/login', {
+            method: 'POST',
+            body: {
+              email: loginDados.email,
+              senha: loginDados.senha,
+              lembrar: loginDados.lembrar
+            }
+          })
+
+      usuario.value = normalizar(dados)
+      loginDados.senha = ''
+      fecharModal()
+    } catch (erro) {
+      alert(erro.message)
+    }
   }
 
-  // FECHAR MODAL
+  async function sair() {
+    try {
+      await api('/auth/logout', { method: 'POST' })
+    } catch {
+      // mesmo com erro, limpa o estado local
+    }
+    usuario.value = null
+    fecharModal()
+  }
+
   function fecharModal() {
     modalAberto.value = false
     modalTipo.value = ''
   }
 
-  // Retorna tudo para ser usado no arquivo .vue
   return {
     usuario,
     modalAberto,
@@ -55,6 +108,7 @@ export function useAuth() {
     loginDados,
     abrirPerfilOuLogin,
     entrar,
+    sair,
     fecharModal
   }
 }

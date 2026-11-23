@@ -1,12 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { carregarSessao } from '../data/avatar.js'
 
 import Home from '../views/Home.vue'
 import LandingPage from '../views/LandingPage.vue'
 import Filmes from '../views/Catalogo.vue'
 import FinalizarCadastro from '../views/FinalizarCadastro.vue'
 import Geek from '../views/PixelShop – Loja Geek.vue'
-import Voly from '../views/interface_Voly.vue'
-
+import Perfil from '../views/perfil.vue'
+import Voly from '../views/voly.vue'
 const routes = [
   {
     path: '/',
@@ -33,6 +34,11 @@ const routes = [
   },
 
   {
+    path: '/Perfil',
+    component: Perfil
+  },
+
+  {
     path: '/voly',
     component: Voly
   }
@@ -41,6 +47,10 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes
+})
+
+router.beforeEach(async () => {
+  await carregarSessao()
 })
 
 export default router

@@ -109,7 +109,8 @@ export const filmes = [
       id: 15,
       imagem: '/filmes/Queda_espada.png',
       tipo: 'filme',
-      genero: ['Ação']
+      genero: ['Ação'],
+      lancamento: '2026'
     },
 
     {
@@ -132,7 +133,7 @@ export const filmes = [
       nome: 'Superman 1',
       imagem: '/filmes/Superman1(CR).jpg',
       tipo: 'filme',
-      genero: ['Ação', 'Aventura', 'Comédia', 'Ficção científica', 'Família']
+      genero: ['Ação', 'Aventura', 'Ficção Científica', 'Família']
     },
 
     {
@@ -233,6 +234,61 @@ export const filmes = [
     {
       id: 31,
       nome: 'O Máskara',
-      imagem: '/filmes/Themaask.jpg'
+      imagem: '/filmes/Themaask.jpg',
+      tipo: 'filme',
+      genero: ['Comédia']
+    },
+
+    {
+      id: 32,
+      nome: 'Superman(2025)',
+      imagem: '/filmes/superman(2025).jpg',
+      genero: ['Ficção Científica', 'Ação'],
+      tipo: 'filme',
+      lancamento: '2025'
+    },
+
+    {
+      id: 33,
+      nome: 'Senhor dos Anéis - A Sociedade do Anel',
+      imagem: '/filmes/senhor_aneis_1.jpg',
+      genero: ['Fantasia', 'Ação', 'Aventura'],
+      tipo: 'filme',
+      lancamento: '2025'
+    },
+
+    {
+      id: 34,
+      nome: 'Shin Godzilla',
+      imagem: '/filmes/Shin_Godzilla.png',
+      genero: ['Ficção Científica', 'Ação', 'Drama', 'Terror'],
+      tipo: 'filme',
+      lancamento: '2016'
+    },
+
+    {
+      id: 35,
+      nome: 'Superman(2025)',
+      imagem: '/filmes/jujutsu.jpeg',
+      genero: ['Ficção Científica', 'Ação', 'Anime'],
+      tipo: 'filme',
+      lancamento: ['2020', '2023']
+    },
+
+    {
+      id: 36,
+      nome: 'Entre o destino e você',
+      imagem: '/filmes/Entre-destino.png',
+      genero: ['Romance'],
+      tipo: 'filme',
+      lancamento: '2026'
+    },
+
+    {
+      id: 37,
+      nome: 'Dragon-Ball - A Batalha dos deuses',
+      genero: ['Anime', 'Ação'],
+      tipo: 'filme',
+      imagem: '/filmes/Dragonball-bs.png'
     }
 ]

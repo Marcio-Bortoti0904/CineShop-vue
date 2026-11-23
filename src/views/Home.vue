@@ -18,10 +18,12 @@
     >
       X
     </button>
-    <Login_perfil
+      <Login_perfil
       :modal-tipo="modalTipo"
       :login-dados="loginDados"
+      :usuario="usuario"
       @entrar="entrar"
+      @sair="sair"
     />
   </div>
 </div>
@@ -76,6 +78,7 @@ const {
   loginDados,
   abrirPerfilOuLogin,
   entrar,
+  sair,
   fecharModal
 } = useAuth()
 </script>

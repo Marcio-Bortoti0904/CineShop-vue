@@ -1,12 +1,12 @@
 <template>
-  <div 
-    v-if="modalTipo === 'login'" 
+  <!-- LOGIN / CADASTRO -->
+  <div
+    v-if="modalTipo === 'login'"
     class="login-conteudo"
   >
+    <h1>{{ loginDados.modo === 'cadastro' ? 'CADASTRO' : 'LOGIN' }}</h1>
 
-    <h1>LOGIN</h1>
-
-    <div class="f">
+    <div v-if="loginDados.modo === 'cadastro'" class="f">
       <label>
         <h3>NOME</h3>
       </label>
@@ -38,7 +38,7 @@
       >
     </div>
 
-    <div class="f">
+    <div v-if="loginDados.modo === 'cadastro'" class="f">
       <label>VOCÊ QUER SER:</label>
 
       <div class="opt">
@@ -60,10 +60,36 @@
       </div>
     </div>
 
+    <label v-else class="lembrar">
+      <input type="checkbox" v-model="loginDados.lembrar">
+      Manter conectado
+    </label>
+
     <button class="btn entrar" @click="$emit('entrar')">
-      ENTRAR
+      {{ loginDados.modo === 'cadastro' ? 'CRIAR CONTA' : 'ENTRAR' }}
     </button>
 
+    <button
+      class="btn"
+      @click="loginDados.modo = loginDados.modo === 'cadastro' ? 'entrar' : 'cadastro'"
+    >
+      {{ loginDados.modo === 'cadastro' ? 'JÁ TENHO CONTA' : 'CRIAR UMA CONTA' }}
+    </button>
+  </div>
+
+  <!-- PERFIL -->
+  <div
+    v-else-if="modalTipo === 'perfil' && usuario"
+    class="login-conteudo"
+  >
+    <h1>PERFIL</h1>
+    <h3>{{ usuario.nome }}</h3>
+    <p>{{ usuario.email }}</p>
+    <p>{{ usuario.role === 'seller' ? 'Vendedor' : 'Usuário' }}</p>
+
+    <button class="btn entrar" @click="$emit('sair')">
+      SAIR DA CONTA
+    </button>
   </div>
 </template>
 
@@ -77,10 +103,15 @@ defineProps({
   loginDados: {
     type: Object,
     required: true
+  },
+
+  usuario: {
+    type: Object,
+    default: null
   }
 })
 
-defineEmits(['entrar'])
+defineEmits(['entrar', 'sair'])
 </script>
 
 <style scoped>
@@ -139,6 +170,13 @@ defineEmits(['entrar'])
 
 .opt .sel {
   background: blue;
+}
+
+.lembrar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
 }
 
 .entrar {
