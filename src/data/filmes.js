@@ -268,7 +268,7 @@ export const filmes = [
 
     {
       id: 35,
-      nome: 'Superman(2025)',
+      nome: 'Jujutsu',
       imagem: '/filmes/jujutsu.jpeg',
       genero: ['Ficção Científica', 'Ação', 'Anime'],
       tipo: 'filme',
