@@ -1,7 +1,7 @@
 <template>
     <main class="Final">
     <section class="dates">
-      <img id="image" src="/imagem/Logo.png" alt="Logo CineShop">
+      <img id="image" src="/imagem/pixil-frame-0 (1).png" alt="Logo CineShop">
       <h1>Finalize seu cadastro</h1>
       <p>Complete seus dados para fazer parte do CineShop.</p>
 
