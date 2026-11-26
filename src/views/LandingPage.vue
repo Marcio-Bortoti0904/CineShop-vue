@@ -335,9 +335,9 @@ import { useRouter } from 'vue-router'
 
 import { cadastroTemporario } from '../data/cadastroTemporario.js'
 
-import PassadorHorizontal from '../components/PassadorHorizontal.vue';
-import FilmeCard from '../components/Filmecard.vue'
-import ProdutoCard from '../components/Produtocard.vue'
+import PassadorHorizontal from '../components/objetos/PassadorHorizontal.vue';
+import FilmeCard from '../components/card/Filmecard.vue'
+import ProdutoCard from '../components/card/Produtocard.vue'
 import { filmes } from '../data/filmes.js'
 import { produtos } from '../data/produtos.js'
 
@@ -395,5 +395,4 @@ function realizarAcao() {
 
 <style scoped>
 @import url('../css/base.css');
-
 </style>
