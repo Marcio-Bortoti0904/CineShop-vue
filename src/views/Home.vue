@@ -3,6 +3,12 @@
       <Header
       :usuario="usuario"
       @abrirPerfil="abrirPerfilOuLogin"
+      :busca="busca"
+      :quantidade-carrinho="quantidadeCarrinho"
+      :usuario-label="usuarioLabel"
+      @atualizar-busca="busca = $event"
+      @abrir-carrinho="abrirCarrinho"
+      @abrir-perfil="abrirPerfil"
       />
       <div
   v-if="modalAberto"
@@ -61,10 +67,10 @@ import { useAuth } from '../data/avatar.js'
 
 // COMPONENTES
 import { categorias } from '../data/categoria.js'
-import CatCard from '../components/CatCard.vue'
-import Header from '../components/Header.vue'
-import PassadorHorizontal from '../components/PassadorHorizontal.vue'
-import Mascote from '../components/Mascote.vue'
+import CatCard from '../components/card/CatCard.vue'
+import Header from '../components/cabecalho/Header.vue'
+import PassadorHorizontal from '../components/objetos/PassadorHorizontal.vue'
+import Mascote from '../components/mascote/Mascote.vue'
 import Login_perfil from './Login_perfil.vue'
 
 onMounted(() => {
@@ -84,6 +90,6 @@ const {
 </script>
 
 <style scoped>
-@import url('../css/base.css');
-@import url('../css/avatar-bot.css');
+@import url('/src/css/base.css');
+@import url('/src/css/avatar-bot.css');
 </style>
