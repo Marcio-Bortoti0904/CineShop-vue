@@ -54,3 +54,10 @@ router.beforeEach(async () => {
 })
 
 export default router
+})
+
+router.beforeEach(async () => {
+  await carregarSessao()
+})
+
+export default router
