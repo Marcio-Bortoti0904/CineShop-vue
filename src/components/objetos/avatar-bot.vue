@@ -26,18 +26,15 @@ defineEmits(['abrir'])
 </script>
 
 <style scoped>
+@import url('/src/css/avatar-bot.css');
 .user {
   display: flex;
   align-items: center;
   gap: 8px;
-
   background: none;
   border: 0;
-
   cursor: pointer;
-
   font-size: 10px;
-
   color: #F2F5FA;
 }
 

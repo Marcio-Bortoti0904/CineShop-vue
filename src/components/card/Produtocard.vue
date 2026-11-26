@@ -69,7 +69,7 @@
 <script setup>
 import { computed } from 'vue'
 
-import { emojisCategoria } from '../data/emojis.js'
+import { emojisCategoria } from '/src/data/emojis.js'
 
 // Aceita os dois formatos de produto:
 //  - Landing page (data/produtos.js): { imagem, nome, preco }

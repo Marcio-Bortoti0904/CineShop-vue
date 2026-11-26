@@ -14,7 +14,6 @@
 </template>
 
 <style scoped>
-@import url('../css/base.css');
 /* MASCOTE VOLY */
 .mascot-container {
   position: fixed;

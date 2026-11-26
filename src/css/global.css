@@ -66,12 +66,12 @@ body:has(.sidebar.menu-aberto) .conteudo-filmes {
 
 @media (max-width: 768px) {
   .conteudo-filmes {
-    margin-left: 64px;
+    margin-left: 100px;
     width: calc(100% - 64px);
   }
 
   body:has(.sidebar.menu-aberto) .conteudo-filmes {
-    margin-left: 210px;
-    width: calc(100% - 210px);
+    margin-left: 300px;
+    width: calc(100% + 210px);
   }
 }

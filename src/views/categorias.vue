@@ -13,7 +13,7 @@
 </template>
 
 <script setup>
-import CatCard from '../components/CatCard.vue'
+import CatCard from '../components/card/CatCard.vue'
 import { categorias } from '../data/categoria.js'
 </script>
 

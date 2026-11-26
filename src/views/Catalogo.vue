@@ -3,7 +3,14 @@
     <Header
       :usuario="usuario"
       @abrirPerfil="abrirPerfilOuLogin"
+      :busca="busca"
+      :quantidade-carrinho="quantidadeCarrinho"
+      :usuario-label="usuarioLabel"
+      @atualizar-busca="busca = $event"
+      @abrir-carrinho="abrirCarrinho"
+      @abrir-perfil="abrirPerfil"
     />
+
     <div
       v-if="modalAberto"
       class="perfil-overlay"
@@ -16,33 +23,34 @@
     >
       X
     </button>
+
     <Login_perfil
       :modal-tipo="modalTipo"
       :login-dados="loginDados"
+      :usuario="usuario"
       @entrar="entrar"
+      @sair="sair"
     />
   </div>
 </div>
   </header>
   <main class="conteudo-filmes">
     <section class="conteudo">
-          <h1>➣ Lançamentos</h1>
-          <div class="passador">
-            <div ref="listaFilmes" class="filmes">
-              <PassadorHorizontal>
-                <FilmeCard
-                  v-for="filme in lancamentos"
-                  :key="filme.id"
-                  :filme="filme"
-                />
-              </PassadorHorizontal>
-            </div>
-            <span class="fumaca fumaca-esquerda" aria-hidden="true"></span>
-            <span class="fumaca fumaca-direita" aria-hidden="true"></span>
-          </div>
-          <div class="catalogo">
-            <h1>➣ Ação</h1>
-            <div ref="listaFilmes" class="filmes">
+      <h1>➣ Lançamentos</h1>
+      <div class="passador">
+        <div ref="listaFilmes" class="filmes">
+          <PassadorHorizontal>
+            <FilmeCard
+            v-for="filme in lancamentos"
+            :key="filme.id"
+            :filme="filme"
+            />
+          </PassadorHorizontal>
+        </div>
+      </div>
+      <div class="catalogo">
+        <h1>➣ Ação</h1>
+        <div ref="listaFilmes" class="filmes">
               <PassadorHorizontal>
                 <FilmeCard 
                   v-for="filme in acao"
@@ -69,23 +77,21 @@
 </template>
 
 <script setup>
-import { onMounted, ref, reactive } from 'vue'
-
+import { onMounted} from 'vue'
+import { useAuth } from '../data/avatar.js'
 import { filmes } from '../data/filmes.js';
 
-import FilmeCard from '../components/Filmecard.vue';
-import PassadorHorizontal from '../components/PassadorHorizontal.vue';
-import Header from '../components/Header.vue'
+import FilmeCard from '../components/card/Filmecard.vue';
+import PassadorHorizontal from '../components/objetos/PassadorHorizontal.vue';
+import Header from '../components/cabecalho/Header.vue'
 import Login_perfil from './Login_perfil.vue'
-import Mascote from '../components/Mascote.vue'
+import Mascote from '../components/mascote/Mascote.vue'
 
 const cont = [...filmes].sort(() => Math.random() - 0.5);
 
 const series = cont.filter(filme => filme.tipo === 'serie');
 const lancamentos = cont.filter(filme => filme.lancamento?.includes('2026'));
 const acao = cont.filter(filme => filme.genero?.includes('Ação') && filme.tipo ==='filme');
-
-import { useAuth } from '../data/avatar.js'
 
 const {
   usuario,
@@ -103,6 +109,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-@import url('../css/base.css');
+@import url('/src/css/base.css');
 @import url('../css/avatar-bot.css');
 </style>

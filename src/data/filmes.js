@@ -292,5 +292,13 @@ export const filmes = [
       genero: ['Anime', 'Ação','Infantil'],
       tipo: 'filme',
       imagem: '/filmes/Dragonball-bs.png'
+    },
+
+    {
+      id: 38,
+      nome: 'Vingadores - Doomsday',
+      genero: ['Ação', 'Filme Marvel', 'Épicos'],
+      tipo: 'filme',
+      imagem: '/filmes/avengers_doomsday.png'
     }
 ]

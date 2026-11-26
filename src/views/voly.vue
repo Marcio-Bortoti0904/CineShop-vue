@@ -26,9 +26,9 @@
 // Importando os componentes
 import { ref } from 'vue'
 
-import CabecalhoVoly from '../components/CabecalhoVoly.vue'
-import MascoteVoly from '../components/MascoteVoly.vue'
-import ChatVoly from '../components/ChatVoly.vue'
+import CabecalhoVoly from '../components/cabecalho/CabecalhoVoly.vue'
+import MascoteVoly from '../components/mascote/MascoteVoly.vue'
+import ChatVoly from '../components/chatVoly/ChatVoly.vue'
 
 // Guarda o estado de digitação da Voly
 const isTyping = ref(false)

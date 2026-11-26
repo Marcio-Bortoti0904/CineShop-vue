@@ -18,7 +18,7 @@
 </template>
 
 <style scoped>
-@import url('../css/base.css');
+@import url('/src/css/base.css');
 .top-bar {
   display: flex;
   justify-content: space-between;

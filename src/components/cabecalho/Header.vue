@@ -12,21 +12,21 @@
     </button>
 
     <!-- LOGOTIPO -->
-    <img
-      id="logo"
-      src="/imagem/pixil-frame-0 (1).png"
-      alt="Logo CineShop"
-    >
+    <Logo />
 </div>
     <!-- PESQUISA -->
     <Busca />
-
-    <!-- AVATAR E IDENTIFICAÇÃO -->
-    <Perfil
-      :usuario="usuario"
-      @abrir="$emit('abrirPerfil')"
-    />
-
+    
+    <div class="right">
+      <button class="btn gold" @click="$emit('abrir-carrinho')">
+        🛒 {{ quantidadeCarrinho }}
+      </button>
+      <!-- AVATAR E IDENTIFICAÇÃO -->
+       <Perfil
+       :usuario="usuario"
+       @abrir="$emit('abrirPerfil')"
+       />
+    </div>
   </header>
 
   <!-- MENU RETRÁTIL -->
@@ -36,9 +36,10 @@
 <script setup>
 import { ref } from 'vue'
 
-import Menu from '../components/Menu.vue'
-import Busca from '../components/busca.vue'
-import Perfil from './avatar-bot.vue'
+import Menu from '../objetos/Menu.vue'
+import Busca from '../objetos/busca.vue'
+import Perfil from '../objetos/avatar-bot.vue'
+import Logo from '../objetos/logo.vue'
 
 // ESTADO DO MENU
 const menuAberto = ref(false)
@@ -56,11 +57,16 @@ defineEmits(['abrirPerfil'])
 </script>
 
 <style scoped>
-@import url('../css/base.css')
 .logo-container {
   display: flex;
   align-items: center;
   gap: 15px;
+}
+
+.right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 .navbar {
@@ -126,5 +132,19 @@ defineEmits(['abrirPerfil'])
 
 .menu-toggle:hover {
   background: #2c2c2c;
+}
+
+.btn {
+  background: #27C3D3;
+  color: #0D1220;
+  border: 4px solid #0D1220;
+  box-shadow: 4px 4px 0 #0D1220;
+  padding: 9px 12px;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.gold {
+  background: #F4C20D;
 }
 </style>
