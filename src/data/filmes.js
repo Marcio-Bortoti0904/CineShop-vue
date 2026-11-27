@@ -203,7 +203,7 @@ export const filmes = [
       nome: 'Matrix',
       imagem: '/filmes/Matrix.png',
       tipo: 'filme',
-      genero: ['Ficção Científica', 'Ação']
+      genero: ['Ficção científica', 'Ação']
     },
 
     {
@@ -230,7 +230,7 @@ export const filmes = [
       imagem: '/filmes/Mario2.png',
       tipo: 'filme',
       lancamento: '2026',
-      genero: ['Infantil']
+      genero: ['Infantil', 'Animação']
     },
     
     {
