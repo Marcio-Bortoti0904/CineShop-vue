@@ -877,6 +877,7 @@ function confirmarCompra() {
   gap: 10px;
   flex-wrap: wrap;
   margin-bottom: 18px;
+  color: white;
 }
 
 .btn {
