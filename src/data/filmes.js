@@ -325,7 +325,7 @@ const catalogo = [
       nome: 'Angry Birds',
       tipo: 'filme',
       lancamento: '2016',
-      autor: 'Clay Kaytis, Fergal Reilly',
+      diretor: 'Clay Kaytis, Fergal Reilly',
       sinopse: 'O estressado Red, o volátil Bomba e o veloz Chuck são três pássaros que não conseguem se encaixar na ilha em que vivem, pois ela é habitada por alegres e pacíficas aves. Mas, quando o local é invadido por misteriosos porquinhos verdes, esses três improváveis heróis precisam descobrir o que estes inesperados visitantes estão tramando.',
       imagem: 'https://br.web.img3.acsta.net/r_1280_720/pictures/16/04/27/19/27/443743.jpg',
       logo: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/The_Angry_Birds_Movie.svg/3840px-The_Angry_Birds_Movie.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail',

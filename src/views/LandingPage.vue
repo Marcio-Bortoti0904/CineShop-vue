@@ -395,5 +395,4 @@ function realizarAcao() {
 
 <style scoped>
 @import url('../css/base.css');
-
 </style>

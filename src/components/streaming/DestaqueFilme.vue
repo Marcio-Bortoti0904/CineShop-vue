@@ -18,8 +18,8 @@
       </div>
 
       <p class="descricao">
-        <strong>Autor:</strong>
-        {{ filme.autor }}
+        <strong>Diretor:</strong>
+        {{ filme.diretor }}
       </p>
 
       <p class="descricao">

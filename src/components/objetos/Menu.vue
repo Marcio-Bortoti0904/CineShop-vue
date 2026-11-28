@@ -12,12 +12,12 @@
 
       <RouterLink to="/filmes" class="menu-item" title="Streaming">
         <img class="icone" src="/imagem/catalogo.png" alt="">
-        <span class="menu-text">Catálogo</span>
+        <span class="menu-text">Assistir</span>
       </RouterLink>
 
       <RouterLink to="/geek" class="menu-item" title="Produtos">
         <img class="icone" src="/imagem/cesta.png" alt="">
-        <span class="menu-text">Shopping</span>
+        <span class="menu-text">Compras</span>
       </RouterLink>
 
       <div class="menu-divider"></div>

@@ -1,7 +1,8 @@
 <template>
-<div class="mascot-container">
+<RouterLink to="/voly">
+  <div class="mascot-container">
     <div class="mascot-bubble pixel-border">
-        <p id="texto">Olá! Sou a Voly. Precisa de ajuda?</p>
+      <p id="texto">Olá! Sou a Voly. Precisa de ajuda?</p>
       </div>
     <div class="mascot-image-wrapper">
         <img
@@ -11,6 +12,7 @@
         >
     </div>
 </div>
+</RouterLink>
 </template>
 
 <style scoped>

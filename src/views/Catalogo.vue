@@ -122,6 +122,39 @@
                 />
             </PassadorHorizontal>
             </div>
+
+            <h1>➣ Ficção científica</h1>
+            <div ref="listaFilmes" class="filmes">
+              <PassadorHorizontal>
+                <FilmeCard 
+                v-for="filme in ficcao"
+                :key="filme.id"
+                :filme="filme"
+                />
+            </PassadorHorizontal>
+            </div>
+
+            <h1>➣ Animação</h1>
+            <div ref="listaFilmes" class="filmes">
+              <PassadorHorizontal>
+                <FilmeCard 
+                v-for="filme in animacoes"
+                :key="filme.id"
+                :filme="filme"
+                />
+            </PassadorHorizontal>
+            </div>
+
+            <h1>➣ Terror e suspense</h1>
+            <div ref="listaFilmes" class="filmes">
+              <PassadorHorizontal>
+                <FilmeCard 
+                v-for="filme in terror"
+                :key="filme.id"
+                :filme="filme"
+                />
+            </PassadorHorizontal>
+            </div> 
     </section>
   </main>
   <Mascote />
