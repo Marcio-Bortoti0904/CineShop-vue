@@ -37,7 +37,6 @@
   <main class="conteudo-filmes">
     <section class="conteudo">
       <h1>➣ Lançamentos</h1>
-      <div class="passador">
         <div ref="listaFilmes" class="filmes">
           <PassadorHorizontal>
             <FilmeCard
@@ -47,9 +46,7 @@
             />
           </PassadorHorizontal>
         </div>
-      </div>
-      <div class="catalogo">
-        <h1>➣ Ação</h1>
+        <h1>➣ Filmes de Ação</h1>
         <div ref="listaFilmes" class="filmes">
               <PassadorHorizontal>
                 <FilmeCard 
@@ -60,7 +57,7 @@
               </PassadorHorizontal>
               </div>
 
-            <h1>➣ Séries</h1>
+            <h1>➣ Séries para maratonar</h1>
             <div ref="listaFilmes" class="filmes">
               <PassadorHorizontal>
                 <FilmeCard 
@@ -69,7 +66,61 @@
                 :filme="filme"
                 />
             </PassadorHorizontal>
-            </div> 
+            </div>
+
+            <h1>➣ Ficção científica</h1>
+            <div ref="listaFilmes" class="filmes">
+              <PassadorHorizontal>
+                <FilmeCard 
+                v-for="filme in ficcao"
+                :key="filme.id"
+                :filme="filme"
+                />
+            </PassadorHorizontal>
+            </div>
+
+            <h1>➣ Animação</h1>
+            <div ref="listaFilmes" class="filmes">
+              <PassadorHorizontal>
+                <FilmeCard 
+                v-for="filme in animacoes"
+                :key="filme.id"
+                :filme="filme"
+                />
+            </PassadorHorizontal>
+            </div>
+
+            <h1>➣ Terror e suspense</h1>
+            <div ref="listaFilmes" class="filmes">
+              <PassadorHorizontal>
+                <FilmeCard 
+                v-for="filme in terror"
+                :key="filme.id"
+                :filme="filme"
+                />
+            </PassadorHorizontal>
+            </div>
+
+            <h1>➣ Drama</h1>
+            <div ref="listaFilmes" class="filmes">
+              <PassadorHorizontal>
+                <FilmeCard 
+                v-for="filme in drama"
+                :key="filme.id"
+                :filme="filme"
+                />
+            </PassadorHorizontal>
+            </div>
+
+            <h1>➣ Romance</h1>
+            <div ref="listaFilmes" class="filmes">
+              <PassadorHorizontal>
+                <FilmeCard 
+                v-for="filme in romance"
+                :key="filme.id"
+                :filme="filme"
+                />
+            </PassadorHorizontal>
             </div>
     </section>
   </main>
@@ -89,7 +140,29 @@ import Mascote from '../components/mascote/Mascote.vue'
 
 const cont = [...filmes].sort(() => Math.random() - 0.5);
 
-const series = cont.filter(filme => filme.tipo === 'serie');
+// Categorias
+const ficcao = cont.filter(
+  filme => filme.genero?.includes('Ficção científica')
+);
+
+const animacoes = cont.filter(
+  filme => filme.genero?.includes('Animação')
+);
+
+const terror = cont.filter(
+  filme => filme.genero?.includes('Terror')
+);
+
+const drama = cont.filter(
+  filme => filme.genero?.includes('Drama')
+);
+
+const romance = cont.filter(
+  filme => filme.genero?.includes('Romance')
+);
+const series = cont.filter(
+  filme => filme.tipo === 'serie'
+);
 const lancamentos = cont.filter(filme => filme.lancamento?.includes('2026'));
 const acao = cont.filter(filme => filme.genero?.includes('Ação') && filme.tipo ==='filme');
 

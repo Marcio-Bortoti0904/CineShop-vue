@@ -1,7 +1,6 @@
 <template>
   <main>
     <div class="perfil-page">
-
     <!-- Cabeçalho da plataforma -->
     <header class="navbar">
       <img

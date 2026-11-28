@@ -8,6 +8,7 @@ import FinalizarCadastro from '../views/FinalizarCadastro.vue'
 import Geek from '../views/PixelShop – Loja Geek.vue'
 import Perfil from '../views/perfil.vue'
 import Voly from '../views/voly.vue'
+
 const routes = [
   {
     path: '/',
@@ -41,7 +42,13 @@ const routes = [
   {
     path: '/voly',
     component: Voly
-  }
+  },
+
+  {
+    path: '/assistir/:id',
+    name: 'Assistir',
+    component: () => import('../views/PaginaFilme.vue')
+}
 ]
 
 const router = createRouter({

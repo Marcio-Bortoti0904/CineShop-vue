@@ -1,11 +1,11 @@
-export const filmes = [
+const catalogo = [
     {
       id: 1,
       nome: 'Mestres do Universo',
       imagem: '/filmes/HE-MAN.png',
       lancamento: '2026',
       tipo: 'filme',
-      genero: ['Ação', 'Comédia']
+      genero: ['Ação', 'Comédia', 'Aventura', 'Fantasia', 'Ficção científica', 'Super-herói']
     },
 
     {
@@ -28,14 +28,16 @@ export const filmes = [
 
     {
       id: 4,
+      nome: 'O Fim da Rua',
       imagem: '/filmes/o-fim-da-rua.png',
       lancamento: '2026',
       tipo: 'filme',
-      genero: ['Terror']
+      genero: ['Terror', 'Ação']
     },
 
     {
       id: 5,
+      nome: 'Street Fighter',
       lancamento: '2026',
       tipo: 'filme',
       imagem: '/filmes/Street_Fighter_2026.jpeg',
@@ -44,6 +46,7 @@ export const filmes = [
 
     {
       id: 6,
+      nome: 'A Terceira Guerra Mundial',
       imagem: '/filmes/3guerra.png',
       lancamento: '2026',
       tipo: 'filme',
@@ -52,6 +55,7 @@ export const filmes = [
 
     {
       id: 7,
+      nome: 'Como Mágica',
       imagem: '/filmes/como-magica-2026.webp',
       lancamento: '2026',
       tipo: 'filme',
@@ -172,7 +176,8 @@ export const filmes = [
       id: 23,
       nome: 'Invencivel',
       imagem: '/filmes/invencivel-serie.png',
-      tipo: 'serie'
+      tipo: 'serie',
+      lancamento: '2026',
     },
 
     {
@@ -195,7 +200,8 @@ export const filmes = [
       nome: 'Areias do Eterno',
       imagem: '/filmes/Areias_eterno.png',
       tipo: 'filme',
-      genero: ['Aventura', 'Terror']
+      genero: ['Aventura', 'Terror'],
+      lancamento: '2026',
     },
 
     {
@@ -203,7 +209,7 @@ export const filmes = [
       nome: 'Matrix',
       imagem: '/filmes/Matrix.png',
       tipo: 'filme',
-      genero: ['Ficção Científica', 'Ação']
+      genero: ['Ficção científica', 'Ação']
     },
 
     {
@@ -230,7 +236,7 @@ export const filmes = [
       imagem: '/filmes/Mario2.png',
       tipo: 'filme',
       lancamento: '2026',
-      genero: ['Infantil']
+      genero: ['Infantil', 'Animação']
     },
     
     {
@@ -299,6 +305,61 @@ export const filmes = [
       nome: 'Vingadores - Doomsday',
       genero: ['Ação', 'Filme Marvel', 'Épicos'],
       tipo: 'filme',
-      imagem: '/filmes/avengers_doomsday.png'
+      imagem: '/filmes/avengers_doomsday.png',
+      lancamento: '2026',
+    },
+
+    {
+      id: 39,
+      nome: 'Thunderbolts*',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/4/40/Thunderbolts_2025_logo.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
+      lancamento: '2025',
+      imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGO4OLz1tpZJ0qnJGC1kubDnN5-lXvEJHol1EEtGIX0aDiqldyqu2vHMM&s=10',
+      tipo: 'filme',
+      genero: ['Ação', 'Super-herói', 'Aventura'],
+      archiveId: 'thunderbolts_202611',
+    },
+
+    {
+      id: 40,
+      nome: 'Angry Birds',
+      tipo: 'filme',
+      lancamento: '2016',
+      autor: 'Clay Kaytis, Fergal Reilly',
+      sinopse: 'O estressado Red, o volátil Bomba e o veloz Chuck são três pássaros que não conseguem se encaixar na ilha em que vivem, pois ela é habitada por alegres e pacíficas aves. Mas, quando o local é invadido por misteriosos porquinhos verdes, esses três improváveis heróis precisam descobrir o que estes inesperados visitantes estão tramando.',
+      imagem: 'https://br.web.img3.acsta.net/r_1280_720/pictures/16/04/27/19/27/443743.jpg',
+      logo: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/The_Angry_Birds_Movie.svg/3840px-The_Angry_Birds_Movie.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail',
+      archiveId: 'angry-birds_20261127',
+      genero: ['Ação', 'Super-herói', 'Aventura'],
     }
 ]
+
+export const filmes = catalogo.map((filme) => {
+
+  return {
+    ...filme,
+
+    // Padroniza o título.
+    titulo: filme.nome || 'Título não informado',
+
+    // Padroniza o ano de lançamento.
+    ano: Array.isArray(filme.lancamento)
+      ? filme.lancamento.join(' – ')
+      : filme.lancamento || 'Não informado',
+
+    // Informações complementares.
+    sinopse: filme.sinopse || 'Sinopse ainda não cadastrada.',
+
+    duracao: filme.duracao || 'Não informada',
+
+    diretor: filme.diretor || 'Não informado',
+
+    // Identificação no Internet Archive.
+    archiveId: filme.archiveId || null,
+
+    // Disponibilidade para reprodução.
+    disponivel: Boolean(
+      filme.archiveId
+    )
+  }
+})
